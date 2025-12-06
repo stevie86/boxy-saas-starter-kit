@@ -114,7 +114,7 @@ model Property {
   website     String?
   timezone    String   @default("Europe/Lisbon")
   currency    String   @default("EUR")
-  taxRate     Float    @default(0.0)
+  taxRate     Decimal  @default(0.0)
   checkInTime String   @default("15:00")
   checkOutTime String  @default("11:00")
   createdAt   DateTime @default(now())
