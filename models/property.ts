@@ -12,7 +12,7 @@ export interface CreatePropertyParams {
   website?: string;
   timezone?: string;
   currency?: string;
-  taxRate?: number;
+  taxRate?: string;
   checkInTime?: string;
   checkOutTime?: string;
 }
@@ -27,7 +27,7 @@ export interface UpdatePropertyParams {
   website?: string;
   timezone?: string;
   currency?: string;
-  taxRate?: number;
+  taxRate?: string;
   checkInTime?: string;
   checkOutTime?: string;
 }
