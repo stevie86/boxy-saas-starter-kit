@@ -82,6 +82,7 @@ model Team {
   members         TeamMember[]
   invitations     Invitation[]
   apiKeys         ApiKey[]
+  property        Property?
 
   @@index([billingId])
 }
