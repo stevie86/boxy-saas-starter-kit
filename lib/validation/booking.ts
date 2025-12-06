@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const createBookingSchema = z.object({
-  guestId: z.string().min(1, 'Guest is required').optional(),
+  guestId: z.string().min(1, 'Guest is required'),
   checkIn: z.string().min(1, 'Check-in date is required'),
   checkOut: z.string().min(1, 'Check-out date is required'),
   totalAmount: z.number().min(0, 'Total amount must be positive'),
