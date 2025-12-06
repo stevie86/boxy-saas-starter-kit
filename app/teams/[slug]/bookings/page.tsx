@@ -34,6 +34,25 @@ export default async function BookingsPage() {
     setSelectedBooking(booking);
   };
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'pending':
+        return 'badge-warning';
+      case 'confirmed':
+        return 'badge-success';
+      case 'checked_in':
+        return 'badge-info';
+      case 'checked_out':
+        return 'badge-ghost';
+      case 'cancelled':
+        return 'badge-error';
+      case 'no_show':
+        return 'badge-error';
+      default:
+        return 'badge';
+    }
+  };
+
   return (
     <div>
       <PageHeader title="Bookings" description="Manage your bookings" />
@@ -50,6 +69,7 @@ export default async function BookingsPage() {
               <th>Rooms</th>
               <th>Check-in</th>
               <th>Check-out</th>
+              <th>Status</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -60,6 +80,9 @@ export default async function BookingsPage() {
                 <td>{booking.rooms.map((room) => room.name).join(', ')}</td>
                 <td>{booking.checkIn.toLocaleDateString()}</td>
                 <td>{booking.checkOut.toLocaleDateString()}</td>
+                <td>
+                  <div className={`badge ${getStatusColor(booking.status)}`}>{booking.status}</div>
+                </td>
                 <td>
                   <button className="btn btn-sm">
                     Edit

@@ -18,12 +18,6 @@ export const createBookingSchema = z.object({
 });
 
 export const updateBookingSchema = z.object({
-  guestId: z.string().optional(),
-  checkIn: z.string().optional(),
-  checkOut: z.string().optional(),
-  totalAmount: z.number().min(0, 'Total amount must be positive').optional(),
-  channel: z.string().optional(),
-  notes: z.string().optional(),
   status: z.enum(['pending', 'confirmed', 'checked_in', 'checked_out', 'cancelled', 'no_show']).optional(),
   paymentStatus: z.enum(['pending', 'partial', 'paid', 'refunded']).optional(),
 });
