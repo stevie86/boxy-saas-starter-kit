@@ -101,6 +101,72 @@ model TeamMember {
   @@index([userId])
 }
 
+model Property {
+  id        String   @id @default(uuid())
+  teamId    String   @unique
+  name      String
+  city      String
+  timezone  String   @default("Europe/Lisbon")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  team     Team      @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  rooms    Room[]
+  bookings Booking[]
+}
+
+model Room {
+  id         String   @id @default(uuid())
+  propertyId String
+  name       String
+  type       String
+  beds       Int      @default(1)
+  status     String   @default("open")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+
+  property    Property   @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  bookingBeds BookingBed[]
+
+  @@index([propertyId])
+}
+
+model Booking {
+  id           String    @id @default(uuid())
+  propertyId   String
+  checkIn      DateTime
+  checkOut     DateTime
+  status       String    @default("reserved")
+  channel      String?
+  totalDue     Int       @default(0)
+  amountPaid   Int       @default(0)
+  guestName    String
+  guestEmail   String?
+  guestCountry String?
+  documentId   String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @default(now())
+
+  property Property   @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  beds     BookingBed[]
+
+  @@index([propertyId])
+  @@index([checkIn])
+}
+
+model BookingBed {
+  id        String   @id @default(uuid())
+  bookingId String
+  roomId    String
+  bedLabel  String
+
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  room    Room    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([bookingId])
+  @@index([roomId])
+}
+
 model Invitation {
   id             String   @id @default(uuid())
   teamId         String
