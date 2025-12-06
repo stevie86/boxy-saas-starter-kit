@@ -102,56 +102,75 @@ model TeamMember {
 }
 
 model Property {
-  id        String   @id @default(uuid())
-  teamId    String   @unique
-  name      String
-  city      String
-  timezone  String   @default("Europe/Lisbon")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id          String   @id @default(uuid())
+  teamId      String   @unique
+  name        String
+  city        String
+  country     String   @default("Portugal")
+  address     String?
+  phone       String?
+  email       String?
+  website     String?
+  timezone    String   @default("Europe/Lisbon")
+  currency    String   @default("EUR")
+  taxRate     Float    @default(0.0)
+  checkInTime String   @default("15:00")
+  checkOutTime String  @default("11:00")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 
   team     Team      @relation(fields: [teamId], references: [id], onDelete: Cascade)
   rooms    Room[]
   bookings Booking[]
+  guests   Guest[]
 }
 
 model Room {
-  id         String   @id @default(uuid())
-  propertyId String
-  name       String
-  type       String
-  beds       Int      @default(1)
-  status     String   @default("open")
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @default(now())
+  id          String   @id @default(uuid())
+  propertyId  String
+  name        String
+  type        String   // "dormitory", "private", "suite"
+  beds        Int      @default(1)
+  pricePerNight Int    @default(0) // in cents
+  status      String   @default("available") // "available", "maintenance", "closed"
+  description String?
+  amenities   String[] @default([]) // ["wifi", "ac", "bathroom", "balcony"]
+  maxOccupancy Int     @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 
-  property    Property   @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  property    Property     @relation(fields: [propertyId], references: [id], onDelete: Cascade)
   bookingBeds BookingBed[]
 
   @@index([propertyId])
+  @@index([status])
 }
 
 model Booking {
   id           String    @id @default(uuid())
   propertyId   String
+  guestId      String?
   checkIn      DateTime
   checkOut     DateTime
-  status       String    @default("reserved")
-  channel      String?
-  totalDue     Int       @default(0)
-  amountPaid   Int       @default(0)
-  guestName    String
-  guestEmail   String?
-  guestCountry String?
-  documentId   String?
+  status       String    @default("confirmed") // "pending", "confirmed", "checked_in", "checked_out", "cancelled", "no_show"
+  channel      String?   // "direct", "booking.com", "hostelworld", "walk_in"
+  totalAmount  Int       @default(0) // in cents
+  amountPaid   Int       @default(0) // in cents
+  paymentStatus String   @default("pending") // "pending", "partial", "paid", "refunded"
+  notes        String?
+  confirmationCode String? @unique
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @default(now())
 
-  property Property   @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  property Property     @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  guest    Guest?       @relation(fields: [guestId], references: [id], onDelete: SetNull)
   beds     BookingBed[]
+  payments Payment[]
 
   @@index([propertyId])
   @@index([checkIn])
+  @@index([status])
+  @@index([confirmationCode])
 }
 
 model BookingBed {
@@ -159,12 +178,78 @@ model BookingBed {
   bookingId String
   roomId    String
   bedLabel  String
+  pricePerNight Int @default(0) // in cents, can override room price
 
   booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
   room    Room    @relation(fields: [roomId], references: [id], onDelete: Cascade)
 
   @@index([bookingId])
   @@index([roomId])
+}
+
+model Guest {
+  id           String    @id @default(uuid())
+  propertyId   String
+  firstName    String
+  lastName     String
+  email        String?
+  phone        String?
+  nationality  String?
+  documentType String?   // "passport", "id_card", "driving_license"
+  documentId   String?
+  dateOfBirth  DateTime?
+  address      String?
+  city         String?
+  country      String?
+  notes        String?
+  blacklisted  Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @default(now())
+
+  property Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  bookings Booking[]
+
+  @@index([propertyId])
+  @@index([email])
+  @@index([documentId])
+}
+
+model Payment {
+  id            String   @id @default(uuid())
+  bookingId     String
+  amount        Int      // in cents
+  currency      String   @default("EUR")
+  method        String   // "cash", "card", "bank_transfer", "online"
+  status        String   @default("completed") // "pending", "completed", "failed", "refunded"
+  reference     String?  // external payment reference
+  notes         String?
+  processedBy   String?  // user ID who processed the payment
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now())
+
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  @@index([bookingId])
+  @@index([status])
+}
+
+model Expense {
+  id          String   @id @default(uuid())
+  propertyId  String
+  category    String   // "maintenance", "supplies", "utilities", "marketing", "other"
+  description String
+  amount      Int      // in cents
+  currency    String   @default("EUR")
+  date        DateTime @default(now())
+  receipt     String?  // file path or URL
+  notes       String?
+  createdBy   String   // user ID
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+
+  @@index([propertyId])
+  @@index([category])
+  @@index([date])
 }
 
 model Invitation {
