@@ -1,0 +1,62 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+import { getSession } from '@/lib/session';
+import { getTeamBySlug } from '@/models/team';
+import { getProperty } from '@/models/property';
+import { getGuest, updateGuest, deleteGuest } from '@/models/guest';
+import { ApiError } from '@/lib/errors';
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    const session = await getSession(req, res);
+    if (!session?.user?.id) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const { slug, id } = req.query as { slug: string; id: string };
+    const team = await getTeamBySlug(slug);
+    
+    if (!team) {
+      return res.status(404).json({ error: 'Team not found' });
+    }
+
+    const teamMember = team.members.find(m => m.userId === session.user.id);
+    if (!teamMember) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
+    const property = await getProperty(team.id);
+    if (!property) {
+      return res.status(404).json({ error: 'Property not found' });
+    }
+
+    switch (req.method) {
+      case 'GET':
+        const guest = await getGuest(id);
+        if (!guest || guest.propertyId !== property.id) {
+          return res.status(404).json({ error: 'Guest not found' });
+        }
+        return res.status(200).json(guest);
+
+      case 'PUT':
+        const updatedGuest = await updateGuest(id, req.body);
+        return res.status(200).json(updatedGuest);
+
+      case 'DELETE':
+        if (teamMember.role !== 'ADMIN' && teamMember.role !== 'OWNER') {
+          return res.status(403).json({ error: 'Insufficient permissions' });
+        }
+        
+        await deleteGuest(id);
+        return res.status(204).end();
+
+      default:
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
+  } catch (error) {
+    console.error('Guest API error:', error);
+    if (error instanceof ApiError) {
+      return res.status(error.code).json({ error: error.message });
+    }
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}
