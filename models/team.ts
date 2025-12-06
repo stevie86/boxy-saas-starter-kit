@@ -447,3 +447,167 @@ export const getCurrentUserWithTeam = async (
     team,
   };
 };
+import { prisma } from '@/lib/prisma';
+import type { Team, TeamMember, User, Role } from '@prisma/client';
+
+export interface CreateTeamParams {
+  name: string;
+  slug: string;
+  domain?: string;
+  defaultRole?: Role;
+}
+
+export interface UpdateTeamParams {
+  name?: string;
+  slug?: string;
+  domain?: string;
+  defaultRole?: Role;
+}
+
+export type TeamWithMembers = Team & {
+  members: (TeamMember & {
+    user: User;
+  })[];
+};
+
+export const createTeam = async (params: CreateTeamParams): Promise<Team> => {
+  return await prisma.team.create({
+    data: params,
+  });
+};
+
+export const getTeam = async (where: { id?: string; slug?: string }): Promise<Team | null> => {
+  return await prisma.team.findFirst({
+    where,
+  });
+};
+
+export const getTeamBySlug = async (slug: string): Promise<Team | null> => {
+  return await prisma.team.findUnique({
+    where: { slug },
+  });
+};
+
+export const getTeams = async (): Promise<Team[]> => {
+  return await prisma.team.findMany({
+    orderBy: { createdAt: 'desc' },
+  });
+};
+
+export const getTeamWithMembers = async (teamId: string): Promise<TeamWithMembers | null> => {
+  return await prisma.team.findUnique({
+    where: { id: teamId },
+    include: {
+      members: {
+        include: {
+          user: true,
+        },
+        orderBy: { createdAt: 'asc' },
+      },
+    },
+  });
+};
+
+export const updateTeam = async (teamId: string, params: UpdateTeamParams): Promise<Team> => {
+  return await prisma.team.update({
+    where: { id: teamId },
+    data: params,
+  });
+};
+
+export const deleteTeam = async (teamId: string): Promise<void> => {
+  await prisma.team.delete({
+    where: { id: teamId },
+  });
+};
+
+export const addTeamMember = async (
+  teamId: string,
+  userId: string,
+  role: Role = Role.MEMBER
+): Promise<TeamMember> => {
+  return await prisma.teamMember.create({
+    data: {
+      teamId,
+      userId,
+      role,
+    },
+  });
+};
+
+export const removeTeamMember = async (teamId: string, userId: string): Promise<void> => {
+  await prisma.teamMember.delete({
+    where: {
+      teamId_userId: {
+        teamId,
+        userId,
+      },
+    },
+  });
+};
+
+export const updateTeamMemberRole = async (
+  teamId: string,
+  userId: string,
+  role: Role
+): Promise<TeamMember> => {
+  return await prisma.teamMember.update({
+    where: {
+      teamId_userId: {
+        teamId,
+        userId,
+      },
+    },
+    data: { role },
+  });
+};
+
+export const getTeamMember = async (
+  teamId: string,
+  userId: string
+): Promise<TeamMember | null> => {
+  return await prisma.teamMember.findUnique({
+    where: {
+      teamId_userId: {
+        teamId,
+        userId,
+      },
+    },
+    include: {
+      user: true,
+      team: true,
+    },
+  });
+};
+
+export const isTeamMember = async (teamId: string, userId: string): Promise<boolean> => {
+  const member = await prisma.teamMember.findUnique({
+    where: {
+      teamId_userId: {
+        teamId,
+        userId,
+      },
+    },
+  });
+
+  return !!member;
+};
+
+export const getTeamsByUserId = async (userId: string): Promise<TeamWithMembers[]> => {
+  const teamMembers = await prisma.teamMember.findMany({
+    where: { userId },
+    include: {
+      team: {
+        include: {
+          members: {
+            include: {
+              user: true,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  return teamMembers.map((tm) => tm.team);
+};
