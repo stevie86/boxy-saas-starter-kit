@@ -6,6 +6,9 @@ export async function getGuests(teamId: string) {
       where: {
         teamId: teamId,
       },
+      orderBy: {
+        lastName: "asc",
+      },
     });
     return guests;
   } catch (error) {
@@ -14,11 +17,22 @@ export async function getGuests(teamId: string) {
   }
 }
 
-export async function getGuestById(id: string) {
+export async function getGuestById(id: string, teamId: string) {
   try {
-    const guest = await prisma.guest.findUnique({
+    const guest = await prisma.guest.findFirst({
       where: {
         id: id,
+        teamId: teamId,
+      },
+      include: {
+        bookings: {
+          include: {
+            rooms: true,
+          },
+          orderBy: {
+            checkIn: "desc",
+          },
+        },
       },
     });
     return guest;
