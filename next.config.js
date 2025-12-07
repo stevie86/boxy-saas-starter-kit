@@ -1,5 +1,4 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
-const { i18n } = require('./next-i18next.config');
 const { withSentryConfig } = require('@sentry/nextjs');
 
 /** @type {import('next').NextConfig} */
@@ -17,7 +16,7 @@ const nextConfig = {
       },
     ],
   },
-  i18n,
+  // Remove i18n configuration as it's not supported in App Router
   rewrites: async () => {
     return [
       {
