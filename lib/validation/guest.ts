@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 export const createGuestSchema = z.object({
+  teamId: z.string(),
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Invalid email address').optional(),
@@ -13,9 +14,11 @@ export const createGuestSchema = z.object({
   city: z.string().optional(),
   country: z.string().optional(),
   notes: z.string().optional(),
+  blacklisted: z.boolean().default(false),
 });
 
 export const updateGuestSchema = z.object({
+  id: z.string(),
   firstName: z.string().min(1, 'First name is required').optional(),
   lastName: z.string().min(1, 'Last name is required').optional(),
   email: z.string().email('Invalid email address').optional(),

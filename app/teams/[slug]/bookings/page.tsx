@@ -1,109 +1,129 @@
-import { useState } from 'react';
 import { getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
-import { prisma } from "@/lib/prisma";
+import { getBookings } from "@/lib/fetch/bookings";
 import PageHeader from "@/components/ui/panels/PageHeader";
-import BookingForm from "@/components/bookings/BookingForm";
-import BookingDetailPanel from "@/components/bookings/BookingDetailPanel";
+import Link from "next/link";
 
-export default async function BookingsPage() {
+export default async function BookingsPage({ params }: { params: { slug: string } }) {
   const session = await getSession();
 
   if (!session) {
     redirect('/auth/sign-in');
   }
 
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [selectedBooking, setSelectedBooking] = useState(null);
+  const teamId = session.team.id;
+  const { slug } = params;
 
-  const openForm = () => setIsFormOpen(true);
-  const closeForm = () => setIsFormOpen(false);
-  const closePanel = () => setSelectedBooking(null);
+  // Fetch bookings
+  const bookings = await getBookings(teamId);
 
-  const bookings = await prisma.booking.findMany({
-    where: {
-      teamId: session.team.id,
-    },
-    include: {
-      guest: true,
-      rooms: true,
-    },
-  });
-
-  const handleBookingClick = (booking) => {
-    setSelectedBooking(booking);
+  // Helper function to format date
+  const formatDate = (date: Date) => {
+    return new Date(date).toLocaleDateString();
   };
 
-  const getStatusColor = (status) => {
+  // Helper function to get status badge color
+  const getStatusColor = (status: string) => {
     switch (status) {
       case 'pending':
-        return 'badge-warning';
+        return 'bg-yellow-100 text-yellow-800';
       case 'confirmed':
-        return 'badge-success';
+        return 'bg-blue-100 text-blue-800';
       case 'checked_in':
-        return 'badge-info';
+        return 'bg-green-100 text-green-800';
       case 'checked_out':
-        return 'badge-ghost';
+        return 'bg-gray-100 text-gray-800';
       case 'cancelled':
-        return 'badge-error';
+        return 'bg-red-100 text-red-800';
       case 'no_show':
-        return 'badge-error';
+        return 'bg-red-100 text-red-800';
       default:
-        return 'badge';
+        return 'bg-gray-100 text-gray-800';
     }
   };
 
   return (
-    <div>
-      <PageHeader title="Bookings" description="Manage your bookings" />
+    <div className="container mx-auto px-4 py-8">
+      <PageHeader title="Bookings" description="Manage your property bookings" />
+      
       <div className="mb-4">
-        <button className="btn btn-primary" onClick={openForm}>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
           Create Booking
         </button>
       </div>
-      <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th>Guest</th>
-              <th>Rooms</th>
-              <th>Check-in</th>
-              <th>Check-out</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bookings.map((booking) => (
-              <tr key={booking.id} onClick={() => handleBookingClick(booking)}>
-                <td>{booking.guest.firstName} {booking.guest.lastName}</td>
-                <td>{booking.rooms.map((room) => room.name).join(', ')}</td>
-                <td>{booking.checkIn.toLocaleDateString()}</td>
-                <td>{booking.checkOut.toLocaleDateString()}</td>
-                <td>
-                  <div className={`badge ${getStatusColor(booking.status)}`}>{booking.status}</div>
-                </td>
-                <td>
-                  <button className="btn btn-sm">
-                    Edit
-                  </button>
-                </td>
+      
+      {bookings.length > 0 ? (
+        <div className="bg-white rounded-lg shadow overflow-hidden">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Guest
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Rooms
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Check-in
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Check-out
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Status
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Actions
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <input type="checkbox" id="booking-form-modal" className="modal-toggle" checked={isFormOpen} onChange={() => setIsFormOpen(!isFormOpen)}/>
-      <div className="modal">
-        <div className="modal-box">
-          <BookingForm teamId={session.team.id} onClose={closeForm} />
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {bookings.map((booking) => (
+                <tr key={booking.id}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-gray-900">
+                      {booking.guest.firstName} {booking.guest.lastName}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-500">
+                      {booking.rooms.map(room => room.name).join(', ')}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-500">{formatDate(booking.checkIn)}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-500">{formatDate(booking.checkOut)}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(booking.status)}`}>
+                      {booking.status.replace('_', ' ')}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <button className="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                    {booking.status === 'pending' && (
+                      <button className="text-green-600 hover:text-green-900 mr-3">Check In</button>
+                    )}
+                    {booking.status === 'checked_in' && (
+                      <button className="text-gray-600 hover:text-gray-900 mr-3">Check Out</button>
+                    )}
+                    {(booking.status === 'pending' || booking.status === 'confirmed') && (
+                      <button className="text-red-600 hover:text-red-900">Cancel</button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div>
-      {selectedBooking && (
-        <div className="modal modal-open">
-          <div className="modal-box">
-            <BookingDetailPanel booking={selectedBooking} onClose={closePanel} />
-          </div>
+      ) : (
+        <div className="bg-white rounded-lg shadow p-6 text-center">
+          <p className="text-gray-500 mb-4">No bookings found</p>
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Create Your First Booking
+          </button>
         </div>
       )}
     </div>
