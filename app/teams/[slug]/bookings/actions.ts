@@ -3,8 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { createBookingSchema } from '@/lib/validation/booking';
+import { createBookingSchema, updateBookingSchema } from '@/lib/validation/booking';
 import { safeParse } from "valibot";
+import { toast } from 'react-toastify';
 
 export async function createBookingAction(
   teamId: string,
@@ -21,6 +22,7 @@ export async function createBookingAction(
   });
 
   if (!validatedFields.success) {
+    toast.error("Failed to create booking");
     return {
       errors: validatedFields.error.flatten().fieldErrors,
     };
@@ -50,6 +52,7 @@ export async function createBookingAction(
     });
 
     if (overlappingBookings.length > 0) {
+      toast.error("Booking overlaps with existing booking");
       return {
         message: "Booking overlaps with existing booking",
       };
@@ -70,7 +73,10 @@ export async function createBookingAction(
         },
       },
     });
+
+    toast.success("Booking created successfully");
   } catch (error: any) {
+    toast.error("Failed to create booking");
     console.error(error);
     return {
       message: "Failed to create booking",
@@ -79,4 +85,64 @@ export async function createBookingAction(
 
   revalidatePath(`/teams/${teamId}/bookings`);
   redirect(`/teams/${teamId}/bookings`);
+}
+
+export async function cancelBookingAction(id: string, teamId: string) {
+  try {
+    await prisma.booking.update({
+      where: { id },
+      data: {
+        status: 'cancelled',
+      },
+    });
+    toast.success("Booking cancelled successfully");
+  } catch (error: any) {
+    toast.error("Failed to cancel booking");
+    console.error(error);
+    return {
+      message: "Failed to cancel booking",
+    };
+  }
+
+  revalidatePath(`/teams/${teamId}/bookings`);
+}
+
+export async function checkInAction(id: string, teamId: string) {
+  try {
+    await prisma.booking.update({
+      where: { id },
+      data: {
+        status: 'checked_in',
+      },
+    });
+    toast.success("Booking checked in successfully");
+  } catch (error: any) {
+    toast.error("Failed to check in booking");
+    console.error(error);
+    return {
+      message: "Failed to check in booking",
+    };
+  }
+
+  revalidatePath(`/teams/${teamId}/bookings`);
+}
+
+export async function checkOutAction(id: string, teamId: string) {
+  try {
+    await prisma.booking.update({
+      where: { id },
+      data: {
+        status: 'checked_out',
+      },
+    });
+    toast.success("Booking checked out successfully");
+  } catch (error: any) {
+    toast.error("Failed to check out booking");
+    console.error(error);
+    return {
+      message: "Failed to check out booking",
+    };
+  }
+
+  revalidatePath(`/teams/${teamId}/bookings`);
 }
