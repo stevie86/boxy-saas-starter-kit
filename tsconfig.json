@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
-    "types": ["node", "jest"],
+    "types": [
+      "node",
+      "jest"
+    ],
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,10 +25,30 @@
     "baseUrl": ".",
     "noImplicitAny": false,
     "paths": {
-      "@/lib/*": ["lib/*"],
-      "@/components/*": ["components/*"],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/models/*": [
+        "models/*"
+      ]
     },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-auth.d.ts"],
-  "exclude": ["node_modules"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-auth.d.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
