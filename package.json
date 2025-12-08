@@ -6,6 +6,7 @@
     "seed": "ts-node ./prisma/seed.ts"
   },
   "scripts": {
+    "preinstall": "node scripts/check-prisma-version.js",
     "release": "git checkout release && git merge origin/main && release-it && git checkout main && git merge origin/release && git push origin main",
     "dev": "next dev --port 4002",
     "build": "prisma generate && prisma db push && next build",
@@ -70,6 +71,7 @@
     "stripe": "17.7.0",
     "svix": "1.67.0",
     "swr": "2.3.3",
+    "vercel": "49.1.2",
     "yup": "1.6.1",
     "zod": "3.25.64"
   },
