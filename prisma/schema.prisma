@@ -19,12 +19,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -114,7 +114,7 @@ model Property {
   website     String?
   timezone    String   @default("Europe/Lisbon")
   currency    String   @default("EUR")
-  taxRate     Decimal  @default(0.0)
+  taxRate     Float    @default(0.0)
   checkInTime String   @default("15:00")
   checkOutTime String  @default("11:00")
   createdAt   DateTime @default(now())
@@ -135,7 +135,7 @@ model Room {
   pricePerNight Int    @default(0) // in cents
   status      String   @default("available") // "available", "maintenance", "closed"
   description String?
-  amenities   String[] @default([]) // ["wifi", "ac", "bathroom", "balcony"]
+  amenities   String?  // JSON string: ["wifi", "ac", "bathroom", "balcony"]
   maxOccupancy Int     @default(1)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
@@ -264,7 +264,7 @@ model Invitation {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @default(now())
   sentViaEmail   Boolean  @default(true)
-  allowedDomains String[] @default([])
+  allowedDomains String?  // JSON string array
 
   user User @relation(fields: [invitedBy], references: [id], onDelete: Cascade)
   team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
@@ -314,7 +314,7 @@ model Subscription {
 model Service {
   id          String   @id @default(uuid())
   description String
-  features    String[]
+  features    String?  // JSON string array
   image       String
   name        String
   created     DateTime
@@ -337,36 +337,36 @@ model Price {
 }
 
 model jackson_store {
-  key        String    @id(map: "_jackson_store_key") @db.VarChar(1500)
+  key        String    @id
   value      String
-  iv         String?   @db.VarChar(64)
-  tag        String?   @db.VarChar(64)
-  createdAt  DateTime  @default(now()) @db.Timestamp(6)
-  modifiedAt DateTime? @db.Timestamp(6)
-  namespace  String?   @db.VarChar(256)
+  iv         String?
+  tag        String?
+  createdAt  DateTime  @default(now())
+  modifiedAt DateTime?
+  namespace  String?
 
   jackson_index jackson_index[]
 
-  @@index([namespace], map: "_jackson_store_namespace")
+  @@index([namespace])
   @@ignore
 }
 
 model jackson_index {
-  id       Int    @id(map: "_jackson_index_id") @default(autoincrement())
-  key      String @db.VarChar(1500)
-  storeKey String @db.VarChar(1500)
+  id       Int    @id @default(autoincrement())
+  key      String
+  storeKey String
 
   store jackson_store @relation(fields: [storeKey], references: [key], onDelete: Cascade, onUpdate: NoAction)
 
-  @@index([key], map: "_jackson_index_key")
-  @@index([key, storeKey], map: "_jackson_index_key_store")
+  @@index([key])
+  @@index([key, storeKey])
   @@ignore
 }
 
 model jackson_ttl {
-  key       String @id(map: "jackson_ttl_key") @db.VarChar(1500)
+  key       String @id
   expiresAt BigInt
 
-  @@index([expiresAt], map: "_jackson_ttl_expires_at")
+  @@index([expiresAt])
   @@ignore
 }
