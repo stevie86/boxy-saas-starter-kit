@@ -12,13 +12,13 @@ export default function DashboardLayout({
         <div className={styles.navContent}>
           <h1 className={styles.logo}>HostelPulse</h1>
           <div className={styles.navLinks}>
-            <Link href="/dashboard" className={styles.navLink}>
+            <Link href="/" className={styles.navLink}>
               Dashboard
             </Link>
-            <Link href="/dashboard/rooms" className={styles.navLink}>
+            <Link href="/rooms" className={styles.navLink}>
               Rooms
             </Link>
-            <Link href="/dashboard/bookings" className={styles.navLink}>
+            <Link href="/bookings" className={styles.navLink}>
               Bookings
             </Link>
           </div>
