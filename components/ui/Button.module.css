@@ -1,0 +1,49 @@
+.button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.secondary {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.secondary:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.danger {
+  background: #dc2626;
+  color: white;
+}
+
+.danger:hover:not(:disabled) {
+  background: #b91c1c;
+}
