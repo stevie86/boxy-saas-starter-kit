@@ -44,3 +44,22 @@
     font-size: 24px;
   }
 }
+.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  color: #991b1b;
+  text-align: center;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+}
+
+.empty p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}

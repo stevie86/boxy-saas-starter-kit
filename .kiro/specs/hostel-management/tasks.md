@@ -1,6 +1,6 @@
 # Implementation Plan
 
-- [ ] 1. Set up core infrastructure and utilities
+- [x] 1. Set up core infrastructure and utilities
   - Create Prisma client singleton at `lib/db.ts`
   - Create date utility functions at `lib/utils/dates.ts` for date comparisons and range validation
   - Create occupation calculation utilities at `lib/utils/occupation.ts`
@@ -11,7 +11,7 @@
   - **Property 4: Invalid date range rejection**
   - **Validates: Requirements 2.3**
 
-- [ ] 2. Implement room data layer
+- [x] 2. Implement room data layer
   - Create room query functions at `lib/queries/rooms.ts` (getRooms, getRoomById, createRoom, getRoomOccupation)
   - Implement room occupation calculation logic that queries active bookings
   - _Requirements: 1.1, 1.2, 5.1, 5.2, 6.1, 6.2, 6.3, 6.4_
@@ -24,7 +24,7 @@
   - **Property 14: Occupation reflects active bookings**
   - **Validates: Requirements 6.1, 6.2, 6.4**
 
-- [ ] 3. Implement room server actions
+- [x] 3. Implement room server actions
   - Create room server actions at `app/actions/rooms.ts` (createRoomAction, updateRoomAction)
   - Implement validation for room name (non-empty, no whitespace-only)
   - Implement validation for bed count (must be positive)
@@ -43,7 +43,7 @@
   - **Property 12: Invalid bed count rejection**
   - **Validates: Requirements 5.4**
 
-- [ ] 4. Implement booking data layer
+- [x] 4. Implement booking data layer
   - Create booking query functions at `lib/queries/bookings.ts` (getBookings, getBookingById, createBooking, cancelBooking, getActiveBookingsForRoom)
   - Implement booking status calculation based on current date vs check-in/check-out dates
   - Implement booking sorting by check-in date
@@ -57,7 +57,7 @@
   - **Property 8: Booking status calculation**
   - **Validates: Requirements 3.3, 3.4**
 
-- [ ] 5. Implement booking server actions
+- [x] 5. Implement booking server actions
   - Create booking server actions at `app/actions/bookings.ts` (createBookingAction, cancelBookingAction)
   - Implement validation for check-in/check-out date range
   - Implement validation for room availability (check if room is fully occupied)
@@ -77,7 +77,7 @@
   - **Property 9: Cancellation removes booking and updates occupation**
   - **Validates: Requirements 4.2, 4.4**
 
-- [ ] 6. Create touch-optimized UI components
+- [x] 6. Create touch-optimized UI components
   - Create Button component at `components/ui/Button.tsx` with 44x44px minimum touch target
   - Create Card component at `components/ui/Card.tsx` for container layouts
   - Create Input component at `components/ui/Input.tsx` with mobile-appropriate input types
@@ -122,7 +122,7 @@
   - **Property 7: Booking display completeness**
   - **Validates: Requirements 3.2**
 
-- [ ] 9. Create room management pages
+- [x] 9. Create room management pages
   - Create rooms overview page at `app/(dashboard)/rooms/page.tsx` as Server Component
   - Fetch and display all rooms with occupation status
   - Create room details page at `app/(dashboard)/rooms/[id]/page.tsx`
@@ -134,7 +134,7 @@
   - **Property 19: Direct URL navigation**
   - **Validates: Requirements 8.4**
 
-- [ ] 10. Create booking management pages
+- [x] 10. Create booking management pages
   - Create bookings list page at `app/(dashboard)/bookings/page.tsx` as Server Component
   - Fetch and display all bookings sorted by check-in date
   - Create booking details page at `app/(dashboard)/bookings/[id]/page.tsx`

@@ -1,21 +1,17 @@
+'use client'
+
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import styles from './page.module.css'
-import { mockRooms, mockBookings } from '@/lib/mock-data'
 
 export default function DashboardPage() {
-  const totalBeds = mockRooms.reduce((sum, room) => sum + room.beds, 0)
-  const occupiedBeds = mockRooms.reduce((sum, room) => sum + room.occupiedBeds, 0)
-  const availableBeds = totalBeds - occupiedBeds
-  const occupationRate = Math.round((occupiedBeds / totalBeds) * 100)
-  
-  const todayBookings = mockBookings.filter(b => 
-    b.status === 'confirmed' || b.status === 'checked_in'
-  ).length
-  
-  const upcomingCheckIns = mockBookings.filter(b => 
-    new Date(b.checkIn) > new Date() && b.status === 'confirmed'
-  ).length
+  // Demo data for now - will be replaced with real data once database is connected
+  const totalBeds = 22
+  const occupiedBeds = 13
+  const availableBeds = 9
+  const occupationRate = 59
+  const todayBookings = 3
+  const upcomingCheckIns = 2
 
   return (
     <div className={styles.container}>
@@ -98,24 +94,17 @@ export default function DashboardPage() {
       <div className={styles.recentActivity}>
         <h2 className={styles.sectionTitle}>Recent Bookings</h2>
         <div className={styles.activityList}>
-          {mockBookings.slice(0, 3).map(booking => (
-            <Card key={booking.id}>
-              <div className={styles.activityItem}>
-                <div className={styles.activityInfo}>
-                  <div className={styles.activityName}>{booking.guestName}</div>
-                  <div className={styles.activityDetails}>
-                    {booking.roomName} • {new Date(booking.checkIn).toLocaleDateString()}
-                  </div>
+          <Card>
+            <div className={styles.activityItem}>
+              <div className={styles.activityInfo}>
+                <div className={styles.activityName}>Demo Mode</div>
+                <div className={styles.activityDetails}>
+                  Connect your database to see real bookings
                 </div>
-                <Badge variant={
-                  booking.status === 'confirmed' ? 'success' :
-                  booking.status === 'pending' ? 'warning' : 'info'
-                }>
-                  {booking.status}
-                </Badge>
               </div>
-            </Card>
-          ))}
+              <Badge variant="info">demo</Badge>
+            </div>
+          </Card>
         </div>
       </div>
     </div>

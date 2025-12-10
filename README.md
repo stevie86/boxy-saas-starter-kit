@@ -1,36 +1,243 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HostelPulse - Hostel Management System
+
+A minimalistic, touch-ready hostel management system that enables hostel owners to track bookings and monitor room occupation in real-time through any modern browser on tablets or phones.
+
+## Features
+
+- **Real-time Room Management** - View all rooms with current occupation status at a glance
+- **Booking Management** - Create, view, and cancel bookings with automatic validation
+- **Mobile-First Design** - Touch-optimized interface for tablets and phones
+- **Automatic Occupation Calculation** - Real-time bed availability based on active bookings
+- **Browser-Based** - No app installation required, works in any modern browser
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 with React 19 (App Router)
+- **Backend**: Next.js API Routes with Server Actions
+- **Database**: PostgreSQL via Prisma ORM
+- **Styling**: CSS Modules for component-scoped styles
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- PostgreSQL database
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd hostelpulse-clean
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `.env.local` with your database URL:
+```
+DATABASE_URL="postgresql://username:password@localhost:5432/hostelpulse"
+```
 
-## Learn More
+4. Set up the database:
+```bash
+npx prisma generate
+npx prisma db push
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Run the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment & Demo Setup
 
-## Deploy on Vercel
+### Deploying to Vercel for Prospects
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This guide shows how to create preview links for potential hostel owner customers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### 1. Initial Vercel Setup
+
+1. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up/login with GitHub
+   - Import your repository
+   - Vercel will auto-detect Next.js settings
+
+2. **Configure Environment Variables**:
+   - In Vercel dashboard → Project Settings → Environment Variables
+   - Add `DATABASE_URL` with your production PostgreSQL connection string
+   - For demos, you can use a free PostgreSQL service like:
+     - [Supabase](https://supabase.com) (free tier)
+     - [Railway](https://railway.app) (free tier)
+     - [Neon](https://neon.tech) (free tier)
+
+3. **Deploy**:
+   - Push to main branch triggers automatic deployment
+   - Get your production URL: `https://your-project.vercel.app`
+
+#### 2. Creating Demo Environments for Prospects
+
+**Option A: Branch-based Previews (Recommended)**
+
+1. **Create demo branches**:
+```bash
+# Create a demo branch for each prospect
+git checkout -b demo/prospect-hotel-name
+git push origin demo/prospect-hotel-name
+```
+
+2. **Customize for prospect**:
+   - Update hotel name in `app/(dashboard)/layout.tsx`
+   - Add sample data relevant to their property size
+   - Customize branding colors if needed
+
+3. **Vercel automatically creates preview URLs**:
+   - Each branch gets: `https://hostelpulse-clean-git-demo-prospect-hotel-name-yourusername.vercel.app`
+   - Share this URL directly with prospects
+
+**Option B: Multiple Vercel Projects**
+
+1. **Create separate Vercel projects**:
+   - Fork repository for each major prospect
+   - Deploy each fork as separate Vercel project
+   - Customize each deployment independently
+
+#### 3. Demo Data Setup
+
+Create realistic demo data for prospects:
+
+```bash
+# Add to your database seed script
+npx prisma db seed
+```
+
+**Sample data should include**:
+- 5-10 rooms of different types (dorms, private rooms)
+- Current bookings showing realistic occupation
+- Upcoming check-ins/check-outs
+- Mix of booking statuses (confirmed, pending, checked-in)
+
+#### 4. Prospect Demo Workflow
+
+**Before the Demo**:
+1. Create prospect-specific branch
+2. Customize with their hotel name
+3. Add realistic room/booking data for their property size
+4. Test the preview URL thoroughly
+
+**During the Demo**:
+1. Share the preview URL: `https://your-demo-url.vercel.app`
+2. Walk through key features:
+   - Dashboard overview
+   - Room management
+   - Booking creation/management
+   - Mobile responsiveness (test on phone/tablet)
+
+**Demo Script Example**:
+```
+"Here's a live demo customized for [Hotel Name]. 
+You can access this anytime at [preview-url].
+
+Let me show you how you'd manage your [X] rooms and current bookings..."
+```
+
+#### 5. Production Deployment Checklist
+
+Before going live with a customer:
+
+- [ ] Set up production database with backups
+- [ ] Configure custom domain (optional)
+- [ ] Set up monitoring (Vercel Analytics)
+- [ ] Enable authentication/user management
+- [ ] Configure email notifications (if needed)
+- [ ] Set up SSL certificate (automatic with Vercel)
+- [ ] Test on multiple devices/browsers
+
+#### 6. Maintenance & Updates
+
+**For ongoing demos**:
+- Keep demo branches updated with latest features
+- Refresh demo data monthly
+- Monitor Vercel usage limits
+- Archive old prospect demos
+
+**For production customers**:
+- Use Vercel's production branch protection
+- Set up staging environment for testing updates
+- Monitor performance and usage
+
+### Environment Variables Reference
+
+```bash
+# Required
+DATABASE_URL="postgresql://..."
+
+# Optional (for production)
+NEXTAUTH_URL="https://your-domain.com"
+NEXTAUTH_SECRET="your-secret-key"
+```
+
+### Database Schema
+
+The application uses Prisma with PostgreSQL. Key models:
+- `Property` - Hostel/hotel information
+- `Room` - Individual rooms with bed counts
+- `Booking` - Guest reservations
+- `BookingBed` - Bed assignments within rooms
+- `Guest` - Guest information
+
+## Development
+
+### Project Structure
+
+```
+app/
+├── (dashboard)/          # Dashboard pages
+│   ├── rooms/           # Room management
+│   ├── bookings/        # Booking management
+│   └── page.tsx         # Dashboard home
+├── actions/             # Server actions
+├── components/          # Reusable UI components
+└── lib/                 # Utilities and database
+```
+
+### Key Features Implementation Status
+
+- ✅ Database schema and models
+- ✅ Basic UI components and layout
+- ✅ Dashboard with key metrics
+- 🚧 Room and booking CRUD operations (in progress)
+- 🚧 Real-time occupation calculation (in progress)
+- ⏳ Authentication and multi-tenancy
+- ⏳ Advanced reporting and analytics
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is proprietary software. All rights reserved.
+
+## Support
+
+For technical support or sales inquiries:
+- Email: support@hostelpulse.com
+- Demo requests: demo@hostelpulse.com
