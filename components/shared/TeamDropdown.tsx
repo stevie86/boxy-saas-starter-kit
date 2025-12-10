@@ -39,7 +39,7 @@ const TeamDropdown = () => {
       name: t('profile'),
       items: [
         {
-          id: data?.user.id,
+          id: data?.user?.email || 'user-profile',
           name: data?.user?.name,
           href: '/settings/account',
           icon: UserCircleIcon,

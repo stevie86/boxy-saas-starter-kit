@@ -105,7 +105,7 @@ const InviteViaLink = ({ team }: InviteViaLinkProps) => {
           className="text-sm w-full"
         />
         <p className="text-sm text-slate-500 my-2">
-          {invitation.allowedDomains.length > 0
+          {invitation.allowedDomains && invitation.allowedDomains.length > 0
             ? `Anyone with an email address ending with ${invitation.allowedDomains} can use this link to join your team.`
             : 'Anyone can use this link to join your team.'}
           <Button

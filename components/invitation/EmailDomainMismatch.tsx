@@ -18,9 +18,9 @@ const EmailDomainMismatch = ({
   const signOut = useCustomSignOut();
 
   const allowedDomainsString =
-    allowedDomains && allowedDomains.length === 1
+    allowedDomains && Array.isArray(allowedDomains) && allowedDomains.length === 1
       ? `the domain: ${allowedDomains[0]}`
-      : `one of the following domains: ${allowedDomains?.join(', ') || 'specified domains'}`;
+      : `one of the following domains: ${Array.isArray(allowedDomains) ? allowedDomains.join(', ') : allowedDomains || 'specified domains'}`;
 
   return (
     <>

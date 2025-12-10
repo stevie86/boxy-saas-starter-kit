@@ -152,7 +152,7 @@ const JoinWithInvitation = ({
         </div>
         <GoogleReCAPTCHA
           recaptchaRef={recaptchaRef}
-          onChange={setRecaptchaToken}
+          onChange={(token) => token && setRecaptchaToken(token)}
           siteKey={recaptchaSiteKey}
         />
         <div className="space-y-3">

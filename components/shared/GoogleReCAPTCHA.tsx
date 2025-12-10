@@ -3,7 +3,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 interface Props {
   recaptchaRef: React.RefObject<ReCAPTCHA | null>;
-  onChange: (token: string) => void;
+  onChange: (token: string | null) => void;
   siteKey: string | null;
 }
 

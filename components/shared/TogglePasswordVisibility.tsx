@@ -1,9 +1,14 @@
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
+interface TogglePasswordVisibilityProps {
+  isPasswordVisible: boolean;
+  handlePasswordVisibility: () => void;
+}
+
 const TogglePasswordVisibility = ({
   isPasswordVisible,
   handlePasswordVisibility,
-}) => {
+}: TogglePasswordVisibilityProps) => {
   return (
     <button
       onClick={handlePasswordVisibility}
