@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './Select.module.css'
 
 interface SelectOption {
@@ -9,33 +10,31 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string
   error?: string
   helperText?: string
-  options: SelectOption[]
   placeholder?: string
+  options?: SelectOption[]
 }
 
 export function Select({ 
   label, 
   error, 
   helperText, 
-  options,
-  placeholder,
+  placeholder, 
+  options = [], 
   className = '', 
+  children,
   ...props 
 }: SelectProps) {
-  const selectId = props.id || `select-${Math.random().toString(36).substr(2, 9)}`
+  const selectClasses = `${styles.select} ${error ? styles.error : ''} ${className}`
   
   return (
-    <div className={`${styles.container} ${className}`}>
+    <div className={styles.container}>
       {label && (
-        <label htmlFor={selectId} className={styles.label}>
+        <label className={styles.label} htmlFor={props.id}>
           {label}
+          {props.required && <span className={styles.required}>*</span>}
         </label>
       )}
-      <select
-        id={selectId}
-        className={`${styles.select} ${error ? styles.error : ''}`}
-        {...props}
-      >
+      <select className={selectClasses} {...props}>
         {placeholder && (
           <option value="" disabled>
             {placeholder}
@@ -46,13 +45,10 @@ export function Select({
             {option.label}
           </option>
         ))}
+        {children}
       </select>
-      {error && (
-        <span className={styles.errorText}>{error}</span>
-      )}
-      {helperText && !error && (
-        <span className={styles.helperText}>{helperText}</span>
-      )}
+      {error && <div className={styles.errorText}>{error}</div>}
+      {helperText && !error && <div className={styles.helperText}>{helperText}</div>}
     </div>
   )
 }

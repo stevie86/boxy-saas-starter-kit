@@ -1,49 +1,67 @@
 .button {
-  min-width: 44px;
-  min-height: 44px;
-  padding: 12px 24px;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
   transition: all 0.2s ease;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.button:active {
-  transform: scale(0.98);
+  cursor: pointer;
+  border: none;
+  min-height: 44px; /* Touch-friendly */
+  padding: 0 16px;
+  font-size: 16px;
 }
 
 .button:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
+/* Variants */
 .primary {
-  background: #2563eb;
+  background-color: #3b82f6;
   color: white;
 }
 
 .primary:hover:not(:disabled) {
-  background: #1d4ed8;
+  background-color: #2563eb;
 }
 
 .secondary {
-  background: #f3f4f6;
-  color: #1f2937;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
 }
 
 .secondary:hover:not(:disabled) {
-  background: #e5e7eb;
+  background-color: #e5e7eb;
 }
 
 .danger {
-  background: #dc2626;
+  background-color: #ef4444;
   color: white;
 }
 
 .danger:hover:not(:disabled) {
-  background: #b91c1c;
+  background-color: #dc2626;
+}
+
+/* Sizes */
+.sm {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.md {
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.lg {
+  min-height: 52px;
+  padding: 0 24px;
+  font-size: 18px;
 }

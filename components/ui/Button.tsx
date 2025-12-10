@@ -1,21 +1,24 @@
+import React from 'react'
 import styles from './Button.module.css'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger'
+  size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
 }
 
 export function Button({ 
   variant = 'primary', 
+  size = 'md', 
+  className = '', 
   children, 
-  className = '',
   ...props 
 }: ButtonProps) {
+  const baseClasses = `${styles.button} ${styles[variant]} ${styles[size]}`
+  const classes = className ? `${baseClasses} ${className}` : baseClasses
+
   return (
-    <button 
-      className={`${styles.button} ${styles[variant]} ${className}`}
-      {...props}
-    >
+    <button className={classes} {...props}>
       {children}
     </button>
   )
