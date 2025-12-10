@@ -6,7 +6,11 @@ import Header from './Header';
 import Drawer from './Drawer';
 import { useRouter } from 'next/navigation';
 
-export default function AppShell({ children }) {
+interface AppShellProps {
+  children: React.ReactNode;
+}
+
+export default function AppShell({ children }: AppShellProps) {
   const router = useRouter();
   const { status } = useSession();
   const [sidebarOpen, setSidebarOpen] = useState(false);

@@ -1,0 +1,33 @@
+
+> hostelpulse-clean@0.1.0 build /home/user/webdev/hostelpulse-clean
+> prisma generate && next build
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 342ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to react to database changes in your app as they happen? Discover how with Pulse: https://pris.ly/tip-1-pulse
+
+   ▲ Next.js 16.0.8 (Turbopack)
+   - Environments: .env.local
+
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 46s
+   Running TypeScript ...
+Failed to compile.
+
+./app/actions/bookings.ts:68:29
+Type error: Property 'errors' does not exist on type 'ZodError<unknown>'.
+
+[0m [90m 66 |[39m     console[33m.[39merror([32m'Failed to create booking:'[39m[33m,[39m error)
+ [90m 67 |[39m     [36mif[39m (error [36minstanceof[39m z[33m.[39m[33mZodError[39m) {
+[31m[1m>[22m[39m[90m 68 |[39m       [36mreturn[39m { error[33m:[39m error[33m.[39merrors[[35m0[39m][33m.[39mmessage }
+ [90m    |[39m                             [31m[1m^[22m[39m
+ [90m 69 |[39m     }
+ [90m 70 |[39m     [36mreturn[39m { error[33m:[39m [32m'Failed to create booking. Please try again.'[39m }
+ [90m 71 |[39m   }[0m
+Next.js build worker exited with code: 1 and signal: null
+ ELIFECYCLE  Command failed with exit code 1.

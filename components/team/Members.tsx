@@ -69,13 +69,13 @@ const Members = ({ team }: { team: Team }) => {
 
   const canUpdateRole = (member: TeamMember) => {
     return (
-      session?.user.id != member.userId && canAccess('team_member', ['update'])
+      session?.user?.email != member.userId && canAccess('team_member', ['update'])
     );
   };
 
   const canRemoveMember = (member: TeamMember) => {
     return (
-      session?.user.id != member.userId && canAccess('team_member', ['delete'])
+      session?.user?.email != member.userId && canAccess('team_member', ['delete'])
     );
   };
 

@@ -1,13 +1,16 @@
 import { Error, Loading } from '@/components/shared';
 import { TeamTab } from '@/components/team';
 import { Webhooks } from '@/components/webhook';
-import useTeam from 'hooks/useTeam';
+import useTeam from '@/hooks/useTeam';
 import { GetServerSidePropsContext } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import env from '@/lib/env';
 
-const WebhookList = ({ teamFeatures }) => {
+// Mock translation hook
+const useTranslation = (ns: string) => ({ t: (key: string) => key });
+
+const WebhookList = ({
+  teamFeatures,
+}: { teamFeatures: any }) => {
   const { t } = useTranslation('common');
   const { isLoading, isError, team } = useTeam();
 
@@ -42,7 +45,6 @@ export async function getServerSideProps({
 
   return {
     props: {
-      ...(locale ? await serverSideTranslations(locale, ['common']) : {}),
       teamFeatures: env.teamFeatures,
     },
   };

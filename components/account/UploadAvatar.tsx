@@ -34,8 +34,8 @@ const UploadAvatar = ({ user }: { user: Partial<User> }) => {
     }
   };
 
-  const onChangePicture = useCallback((e) => {
-    const file = e.target.files[0];
+  const onChangePicture = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
 
     if (file) {
       onAvatarUpload(file);

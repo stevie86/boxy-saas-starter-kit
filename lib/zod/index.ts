@@ -12,7 +12,7 @@ export const validateWithSchema = <ZSchema extends ZodType>(
   if (!result.success) {
     throw new ApiError(
       422,
-      `Validation Error: ${result.error.errors.map((e) => e.message)[0]}`
+      `Validation Error: ${result.error.issues.map((e) => e.message)[0]}`
     );
   }
 

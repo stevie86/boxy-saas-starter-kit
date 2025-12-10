@@ -1,0 +1,18 @@
+
+> hostelpulse-clean@0.1.0 build /home/user/webdev/hostelpulse-clean
+> prisma generate && next build
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 2.23s
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want real-time updates to your database without manual polling? Discover how with Pulse: https://pris.ly/tip-0-pulse
+
+ ⨯ Unable to acquire lock at /home/user/webdev/hostelpulse-clean/.next/lock, is another instance of next build running?
+   Suggestion: If you intended to restart next build, terminate the other process, and 
+> Build error occurred
+Error: ENOENT: no such file or directory, open '/home/user/webdev/hostelpulse-clean/.next/static/G7oDelm_4YP7uPwl-VnZ_/_buildManifest.js.tmp.iguw9mxp2cc'
+    at ignore-listed frames
+ ELIFECYCLE  Command failed with exit code 1.

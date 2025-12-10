@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
-const AgreeMessage = ({ text }) => {
+const AgreeMessage = ({ text }: { text: string }) => {
   const { t } = useTranslation('common');
 
   return (

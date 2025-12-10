@@ -23,7 +23,7 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
   const { t } = useTranslation('common');
   const signOut = useCustomSignOut();
 
-  if (status === 'loading' || !data) {
+  if (status === 'loading' || !data || !data.user) {
     return null;
   }
 

@@ -128,7 +128,7 @@ const Join = ({ recaptchaSiteKey }: JoinProps) => {
         </div>
         <GoogleReCAPTCHA
           recaptchaRef={recaptchaRef}
-          onChange={setRecaptchaToken}
+          onChange={(token) => token && setRecaptchaToken(token)}
           siteKey={recaptchaSiteKey}
         />
       </div>

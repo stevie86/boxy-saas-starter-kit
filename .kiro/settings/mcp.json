@@ -1,0 +1,63 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["fetch"]
+    },
+    "stripe": {
+      "command": "uvx", 
+      "args": ["mcp-stripe"],
+      "env": {
+        "STRIPE_API_KEY": "",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "aws-knowledge-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-knowledge-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["aws___search_documentation", "aws___list_regions"]
+    },
+    "awslabs.dynamodb-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.dynamodb-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-serverless-mcp": {
+      "command": "uvx",
+      "args": ["awslabs.aws-serverless-mcp@latest"],
+      "env": {
+        "AWS_PROFILE": "default", 
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "playwright": {
+      "command": "uvx",
+      "args": ["mcp-playwright"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": true,
+      "autoApprove": []
+    }
+  }
+}
