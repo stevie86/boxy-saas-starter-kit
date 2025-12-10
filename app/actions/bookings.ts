@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import * as bookingsQuery from '../lib/queries/bookings'
+import * as bookingsQuery from '@/lib/queries/bookings'
 import { z } from 'zod'
 
 // Types
@@ -65,7 +65,7 @@ export async function createBookingAction(prevState: ActionState, formData: Form
   } catch (error) {
     console.error('Failed to create booking:', error)
     if (error instanceof z.ZodError) {
-      return { error: error.errors[0].message }
+      return { error: error.issues[0].message }
     }
     return { error: 'Failed to create booking. Please try again.' }
   }

@@ -1,0 +1,33 @@
+
+> hostelpulse-clean@0.1.0 build /home/user/webdev/hostelpulse-clean
+> prisma generate && next build
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 570ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want real-time updates to your database without manual polling? Discover how with Pulse: https://pris.ly/tip-0-pulse
+
+   ▲ Next.js 16.0.8 (Turbopack)
+   - Environments: .env.local
+
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 55s
+   Running TypeScript ...
+Failed to compile.
+
+./components/account/UploadAvatar.tsx:37:40
+Type error: Parameter 'e' implicitly has an 'any' type.
+
+[0m [90m 35 |[39m   }[33m;[39m
+ [90m 36 |[39m
+[31m[1m>[22m[39m[90m 37 |[39m   [36mconst[39m onChangePicture [33m=[39m useCallback((e) [33m=>[39m {
+ [90m    |[39m                                        [31m[1m^[22m[39m
+ [90m 38 |[39m     [36mconst[39m file [33m=[39m e[33m.[39mtarget[33m.[39mfiles[[35m0[39m][33m;[39m
+ [90m 39 |[39m
+ [90m 40 |[39m     [36mif[39m (file) {[0m
+Next.js build worker exited with code: 1 and signal: null
+ ELIFECYCLE  Command failed with exit code 1.

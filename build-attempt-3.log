@@ -1,0 +1,1698 @@
+
+> hostelpulse-clean@0.1.0 build /home/user/webdev/hostelpulse-clean
+> prisma generate && next build
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 256ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want real-time updates to your database without manual polling? Discover how with Pulse: https://pris.ly/tip-0-pulse
+
+   ▲ Next.js 16.0.8 (Turbopack)
+   - Environments: .env.local
+
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   Creating an optimized production build ...
+
+🌼   daisyUI 4.12.24
+├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+╰─ ❤︎ Support daisyUI project:	https://opencollective.com/daisyui
+
+╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
+
+> Build error occurred
+Error: Turbopack build failed with 67 errors:
+./components/shared/Badge.tsx:1:1
+Module not found: Can't resolve 'classnames'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m classNames [36mfrom[39m [32m'classnames'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { [33mBadgeProps[39m[33m,[39m [33mBadge[39m [36mas[39m [33mBaseBadge[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mconst[39m [33mBadge[39m [33m=[39m (props[33m:[39m [33mBadgeProps[39m) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/shared/Badge.tsx
+    ./components/shared/table/TableBody.tsx
+    ./components/shared/table/Table.tsx
+    ./components/account/ManageSessions.tsx
+    ./pages/settings/security.tsx
+
+  SSR:
+    ./components/shared/Badge.tsx
+    ./components/shared/table/TableBody.tsx
+    ./components/shared/table/Table.tsx
+    ./components/account/ManageSessions.tsx
+    ./pages/settings/security.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/shared/shell/NavigationItems.tsx:2:1
+Module not found: Can't resolve 'classnames'
+[0m [90m 1 |[39m [36mimport[39m [33mLink[39m [36mfrom[39m [32m'next/link'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m classNames [36mfrom[39m [32m'classnames'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36minterface[39m [33mMenuItem[39m {
+ [90m 5 |[39m   name[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/shared/shell/NavigationItems.tsx
+    ./components/shared/shell/UserNavigation.tsx
+    ./components/shared/shell/Navigation.tsx
+    ./components/shared/shell/Drawer.tsx
+    ./components/shared/shell/AppShell.tsx
+    ./components/layouts/AccountLayout.tsx
+    ./pages/500.tsx
+
+  SSR:
+    ./components/shared/shell/NavigationItems.tsx
+    ./components/shared/shell/UserNavigation.tsx
+    ./components/shared/shell/Navigation.tsx
+    ./components/shared/shell/Drawer.tsx
+    ./components/shared/shell/AppShell.tsx
+    ./components/layouts/AccountLayout.tsx
+    ./pages/_app.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/team/TeamTab.tsx:11:1
+Module not found: Can't resolve 'classnames'
+[0m [90m  9 |[39m } [36mfrom[39m [32m'@heroicons/react/24/outline'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m type { [33mTeam[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m classNames [36mfrom[39m [32m'classnames'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m [36mimport[39m useCanAccess [36mfrom[39m [32m'hooks/useCanAccess'[39m[33m;[39m
+ [90m 13 |[39m [36mimport[39m [33mLink[39m [36mfrom[39m [32m'next/link'[39m[33m;[39m
+ [90m 14 |[39m [36mimport[39m { [33mTeamFeature[39m } [36mfrom[39m [32m'types'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  #1 [Browser]:
+    ./components/team/TeamTab.tsx
+    ./pages/teams/[slug]/audit-logs.tsx
+
+  #2 [Browser]:
+    ./components/team/TeamTab.tsx
+    ./pages/teams/[slug]/billing.tsx
+
+  #3 [SSR]:
+    ./components/team/TeamTab.tsx
+    ./pages/teams/[slug]/audit-logs.tsx
+
+  #4 [SSR]:
+    ./components/team/TeamTab.tsx
+    ./pages/teams/[slug]/billing.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/nextAuth.ts:14:1
+Module not found: Can't resolve 'cookies-next'
+[0m [90m 12 |[39m [36mimport[39m { [33mPrismaAdapter[39m } [36mfrom[39m [32m'@next-auth/prisma-adapter'[39m[33m;[39m
+ [90m 13 |[39m [36mimport[39m type { [33mProvider[39m } [36mfrom[39m [32m'next-auth/providers'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { setCookie[33m,[39m getCookie } [36mfrom[39m [32m'cookies-next'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 15 |[39m [36mimport[39m { encode[33m,[39m decode } [36mfrom[39m [32m'next-auth/jwt'[39m[33m;[39m
+ [90m 16 |[39m [36mimport[39m { randomUUID } [36mfrom[39m [32m'crypto'[39m[33m;[39m
+ [90m 17 |[39m[0m
+
+
+
+Import traces:
+  Route:
+    ./lib/nextAuth.ts
+    ./pages/api/sessions/index.ts
+
+  SSR:
+    ./lib/nextAuth.ts
+    ./lib/session.ts
+    ./pages/teams/switch.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/api/auth/custom-signout.ts:5:1
+Module not found: Can't resolve 'cookies-next'
+[0m [90m 3 |[39m [36mimport[39m { getAuthOptions[33m,[39m sessionTokenCookieName } [36mfrom[39m [32m'@/lib/nextAuth'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m'@/lib/prisma'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { getCookie } [36mfrom[39m [32m'cookies-next'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m env [36mfrom[39m [32m'@/lib/env'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { deleteSession } [36mfrom[39m [32m'models/session'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/api/password.ts:6:1
+Module not found: Can't resolve 'cookies-next'
+[0m [90m 4 |[39m [36mimport[39m { [33mApiError[39m } [36mfrom[39m [32m'next/dist/server/api-utils'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m { recordMetric } [36mfrom[39m [32m'@/lib/metrics'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { getCookie } [36mfrom[39m [32m'cookies-next'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { sessionTokenCookieName } [36mfrom[39m [32m'@/lib/nextAuth'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m env [36mfrom[39m [32m'@/lib/env'[39m[33m;[39m
+ [90m 9 |[39m [36mimport[39m { findFirstUserOrThrow[33m,[39m updateUser } [36mfrom[39m [32m'models/user'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/api/sessions/index.ts:2:1
+Module not found: Can't resolve 'cookies-next'
+[0m [90m 1 |[39m [36mimport[39m type { [33mNextApiRequest[39m[33m,[39m [33mNextApiResponse[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m { getCookie } [36mfrom[39m [32m'cookies-next'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m { getSession } [36mfrom[39m [32m'@/lib/session'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { sessionTokenCookieName } [36mfrom[39m [32m'@/lib/nextAuth'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m { findManySessions } [36mfrom[39m [32m'models/session'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/teams/switch.tsx:3:1
+Module not found: Can't resolve 'cookies-next'
+[0m [90m 1 |[39m [36mimport[39m { [33mAuthLayout[39m } [36mfrom[39m [32m'@/components/layouts'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { getSession } [36mfrom[39m [32m'@/lib/session'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { deleteCookie } [36mfrom[39m [32m'cookies-next'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m { getTeams } [36mfrom[39m [32m'models/team'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m type {
+ [90m 6 |[39m   [33mGetServerSidePropsContext[39m[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/billing/PaymentButton.tsx:2:1
+Module not found: Can't resolve 'currency-symbol-map'
+[0m [90m 1 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m getSymbolFromCurrency [36mfrom[39m [32m'currency-symbol-map'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mimport[39m { [33mPrice[39m[33m,[39m [33mPrisma[39m[33m,[39m [33mService[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+ [90m 5 |[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/billing/PaymentButton.tsx
+    ./components/billing/ProductPricing.tsx
+    ./pages/teams/[slug]/billing.tsx
+
+  SSR:
+    ./components/billing/PaymentButton.tsx
+    ./components/billing/ProductPricing.tsx
+    ./pages/teams/[slug]/billing.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./tailwind.config.js:13:49
+Module not found: Can't resolve 'daisyui'
+[0m [90m 11 |[39m     themes[33m:[39m [[32m'corporate'[39m[33m,[39m [32m'black'[39m][33m,[39m
+ [90m 12 |[39m   }[33m,[39m
+[31m[1m>[22m[39m[90m 13 |[39m   plugins[33m:[39m [require([32m'@tailwindcss/typography'[39m)[33m,[39m require([32m'daisyui'[39m)][33m,[39m
+ [90m    |[39m                                                 [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m }[33m;[39m
+ [90m 15 |[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/account/UpdateEmail.tsx:1:1
+Module not found: Can't resolve 'formik'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { [33mButton[39m[33m,[39m [33mInput[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/account/UpdateEmail.tsx
+    ./components/account/UpdateAccount.tsx
+    ./pages/settings/account.tsx
+
+  SSR:
+    ./components/account/UpdateEmail.tsx
+    ./components/account/UpdateAccount.tsx
+    ./pages/settings/account.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/account/UpdateName.tsx:1:1
+Module not found: Can't resolve 'formik'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { [33mButton[39m[33m,[39m [33mInput[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/account/UpdateName.tsx
+    ./components/account/UpdateAccount.tsx
+    ./pages/settings/account.tsx
+
+  SSR:
+    ./components/account/UpdateName.tsx
+    ./components/account/UpdateAccount.tsx
+    ./pages/settings/account.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/account/UpdatePassword.tsx:1:1
+Module not found: Can't resolve 'formik'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/account/UpdatePassword.tsx
+    ./pages/settings/security.tsx
+
+  SSR:
+    ./components/account/UpdatePassword.tsx
+    ./pages/settings/security.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/apiKey/NewAPIKey.tsx:11:1
+Module not found: Can't resolve 'formik'
+[0m [90m  9 |[39m [36mimport[39m [33mModal[39m [36mfrom[39m [32m'../shared/Modal'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { defaultHeaders } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m [36mimport[39m { z } [36mfrom[39m [32m'zod'[39m[33m;[39m
+ [90m 13 |[39m [36mimport[39m { createApiKeySchema } [36mfrom[39m [32m'@/lib/zod'[39m[33m;[39m
+ [90m 14 |[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/apiKey/NewAPIKey.tsx
+    ./components/apiKey/APIKeys.tsx
+    ./components/apiKey/APIKeysContainer.tsx
+    ./pages/teams/[slug]/api-keys.tsx
+
+  SSR:
+    ./components/apiKey/NewAPIKey.tsx
+    ./components/apiKey/APIKeys.tsx
+    ./components/apiKey/APIKeysContainer.tsx
+    ./pages/teams/[slug]/api-keys.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/Join.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m { [33mInputWithLabel[39m } [36mfrom[39m [32m'@/components/shared'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { defaultHeaders[33m,[39m passwordPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/Join.tsx
+    ./pages/auth/join.tsx
+
+  SSR:
+    ./components/auth/Join.tsx
+    ./pages/auth/join.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/JoinWithInvitation.tsx:12:1
+Module not found: Can't resolve 'formik'
+[0m [90m 10 |[39m   passwordPolicies[33m,[39m
+ [90m 11 |[39m } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 12 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 13 |[39m [36mimport[39m useInvitation [36mfrom[39m [32m'hooks/useInvitation'[39m[33m;[39m
+ [90m 14 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 15 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/JoinWithInvitation.tsx
+    ./pages/auth/join.tsx
+
+  SSR:
+    ./components/auth/JoinWithInvitation.tsx
+    ./pages/auth/join.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/MagicLink.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m { maxLengthPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m env [36mfrom[39m [32m'@/lib/env'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m useInvitation [36mfrom[39m [32m'hooks/useInvitation'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { signIn[33m,[39m useSession } [36mfrom[39m [32m'next-auth/react'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/MagicLink.tsx
+    ./pages/auth/magic-link.tsx
+
+  SSR:
+    ./components/auth/MagicLink.tsx
+    ./pages/auth/magic-link.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/ResetPassword.tsx:7:1
+Module not found: Can't resolve 'formik'
+[0m [90m  5 |[39m   passwordPolicies[33m,[39m
+ [90m  6 |[39m } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/ResetPassword.tsx
+    ./pages/auth/reset-password/[token].tsx
+
+  SSR:
+    ./components/auth/ResetPassword.tsx
+    ./pages/auth/reset-password/[token].tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/invitation/InviteViaEmail.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { [33mButton[39m[33m,[39m [33mInput[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/invitation/InviteViaEmail.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./components/invitation/InviteViaEmail.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/invitation/InviteViaLink.tsx:3:1
+Module not found: Can't resolve 'formik'
+[0m [90m 1 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { [33mButton[39m[33m,[39m [33mInput[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/invitation/InviteViaLink.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./components/invitation/InviteViaLink.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/team/CreateTeam.tsx:3:1
+Module not found: Can't resolve 'formik'
+[0m [90m 1 |[39m [36mimport[39m { defaultHeaders[33m,[39m maxLengthPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m type { [33mTeam[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m useTeams [36mfrom[39m [32m'hooks/useTeams'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  #1 [Browser]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/Teams.tsx
+    ./pages/teams/index.tsx
+
+  #2 [Browser]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/index.ts
+    ./pages/teams/index.tsx
+
+  #3 [SSR]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/Teams.tsx
+    ./pages/teams/index.tsx
+
+  #4 [SSR]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/index.ts
+    ./pages/teams/index.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/team/TeamSettings.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m { defaultHeaders } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { [33mTeam[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/team/TeamSettings.tsx
+    ./pages/teams/[slug]/settings.tsx
+
+  SSR:
+    ./components/team/TeamSettings.tsx
+    ./pages/teams/[slug]/settings.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/webhook/Form.tsx:3:1
+Module not found: Can't resolve 'formik'
+[0m [90m 1 |[39m [36mimport[39m { [33mInputWithLabel[39m } [36mfrom[39m [32m'@/components/shared'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m type { [33mFormikConfig[39m } [36mfrom[39m [32m'formik'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/webhook/Form.tsx
+    ./components/webhook/EditWebhook.tsx
+    ./components/webhook/index.ts
+    ./pages/teams/[slug]/webhooks.tsx
+
+  SSR:
+    ./components/webhook/Form.tsx
+    ./components/webhook/EditWebhook.tsx
+    ./components/webhook/index.ts
+    ./pages/teams/[slug]/webhooks.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/forgot-password.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m { [33mInputWithLabel[39m } [36mfrom[39m [32m'@/components/shared'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { defaultHeaders[33m,[39m maxLengthPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m type {
+ [90m 6 |[39m   [33mGetServerSidePropsContext[39m[33m,[39m
+ [90m 7 |[39m   [33mInferGetServerSidePropsType[39m[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/login.tsx:8:1
+Module not found: Can't resolve 'formik'
+[0m [90m  6 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mLink[39m [36mfrom[39m [32m'next/link'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/resend-email-token.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m { [33mAlert[39m[33m,[39m [33mInputWithLabel[39m } [36mfrom[39m [32m'@/components/shared'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { defaultHeaders } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { [33mGetServerSidePropsContext[39m[33m,[39m [33mInferGetServerSidePropsType[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { serverSideTranslations } [36mfrom[39m [32m'next-i18next/serverSideTranslations'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mHead[39m [36mfrom[39m [32m'next/head'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/sso/index.tsx:4:1
+Module not found: Can't resolve 'formik'
+[0m [90m 2 |[39m [36mimport[39m { [33mInputWithLabel[39m[33m,[39m [33mLoading[39m } [36mfrom[39m [32m'@/components/shared'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m env [36mfrom[39m [32m'@/lib/env'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { [33mGetServerSidePropsContext[39m[33m,[39m [33mInferGetServerSidePropsType[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { signIn[33m,[39m useSession } [36mfrom[39m [32m'next-auth/react'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/api/import-hack.ts:3:1
+Module not found: Can't resolve 'jose'
+[0m [90m 1 |[39m [90m// Leave the openid-client import to get nextjs to leave the library in node_modules after build[39m
+ [90m 2 |[39m [36mimport[39m [33m*[39m [36mas[39m dummy [36mfrom[39m [32m'openid-client'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m jose [36mfrom[39m [32m'jose'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mimport[39m type { [33mNextApiRequest[39m[33m,[39m [33mNextApiResponse[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 6 |[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/email/sendEmail.ts:1:1
+Module not found: Can't resolve 'nodemailer'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m nodemailer [36mfrom[39m [32m'nodemailer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m env [36mfrom[39m [32m'../env'[39m[33m;[39m
+ [90m 4 |[39m[0m
+
+
+
+Import traces:
+  Route:
+    ./lib/email/sendEmail.ts
+    ./lib/email/sendPasswordResetEmail.ts
+    ./pages/api/auth/forgot-password.ts
+
+  SSR:
+    ./lib/email/sendEmail.ts
+    ./lib/accountLock.ts
+    ./pages/auth/unlock-account.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/api/import-hack.ts:2:1
+Module not found: Can't resolve 'openid-client'
+[0m [90m 1 |[39m [90m// Leave the openid-client import to get nextjs to leave the library in node_modules after build[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [33m*[39m [36mas[39m dummy [36mfrom[39m [32m'openid-client'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m jose [36mfrom[39m [32m'jose'[39m[33m;[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mimport[39m type { [33mNextApiRequest[39m[33m,[39m [33mNextApiResponse[39m } [36mfrom[39m [32m'next'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/shared/GoogleReCAPTCHA.tsx:2:1
+Module not found: Can't resolve 'react-google-recaptcha'
+[0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [33mReCAPTCHA[39m [36mfrom[39m [32m'react-google-recaptcha'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36minterface[39m [33mProps[39m {
+ [90m 5 |[39m   recaptchaRef[33m:[39m [33mReact[39m[33m.[39m[33mRefObject[39m[33m<[39m[33mReCAPTCHA[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/shared/GoogleReCAPTCHA.tsx
+    ./pages/auth/forgot-password.tsx
+
+  SSR:
+    ./components/shared/GoogleReCAPTCHA.tsx
+    ./pages/auth/forgot-password.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/404.tsx:3:1
+Module not found: Can't resolve 'react-i18next'
+[0m [90m 1 |[39m [36mimport[39m [33mReact[39m[33m,[39m { [33mReactElement[39m } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mAccountLayout[39m } [36mfrom[39m [32m'@/components/layouts'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'react-i18next'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m { [33mGetServerSidePropsContext[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m { serverSideTranslations } [36mfrom[39m [32m'next-i18next/serverSideTranslations'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mLink[39m [36mfrom[39m [32m'next/link'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/500.tsx:3:1
+Module not found: Can't resolve 'react-i18next'
+[0m [90m 1 |[39m [36mimport[39m [33mReact[39m[33m,[39m { [33mReactElement[39m } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mAccountLayout[39m } [36mfrom[39m [32m'@/components/layouts'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'react-i18next'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m { [33mGetServerSidePropsContext[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m { serverSideTranslations } [36mfrom[39m [32m'next-i18next/serverSideTranslations'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m router [36mfrom[39m [32m'next/router'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/slack.ts:1:1
+Module not found: Can't resolve 'slack-notify'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33mSlackNotify[39m [36mfrom[39m [32m'slack-notify'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m env [36mfrom[39m [32m'./env'[39m[33m;[39m
+ [90m 4 |[39m[0m
+
+
+
+Import traces:
+  Route:
+    ./lib/slack.ts
+    ./pages/api/auth/join.ts
+
+  SSR:
+    ./lib/slack.ts
+    ./lib/nextAuth.ts
+    ./lib/session.ts
+    ./pages/teams/switch.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/stripe.ts:1:1
+Module not found: Can't resolve 'stripe'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33mStripe[39m [36mfrom[39m [32m'stripe'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m env [36mfrom[39m [32m'@/lib/env'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { updateTeam } [36mfrom[39m [32m'models/team'[39m[33m;[39m
+ [90m 4 |[39m[0m
+
+
+
+Import trace:
+  Route:
+    ./lib/stripe.ts
+    ./pages/api/webhooks/stripe.ts
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/svix.ts:1:1
+Module not found: Can't resolve 'svix'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { [33mEndpointIn[39m[33m,[39m [33mSvix[39m } [36mfrom[39m [32m'svix'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m env [36mfrom[39m [32m'./env'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m type { [33mAppEvent[39m } [36mfrom[39m [32m'types'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Route:
+    ./lib/svix.ts
+    ./pages/api/teams/[slug]/members.ts
+
+  SSR:
+    ./lib/svix.ts
+    ./models/team.ts
+    ./pages/teams/switch.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/account/ManageSessions.tsx:1:1
+Module not found: Can't resolve 'swr'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m useSWR [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { [33mComputerDesktopIcon[39m } [36mfrom[39m [32m'@heroicons/react/24/outline'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/account/ManageSessions.tsx
+    ./pages/settings/security.tsx
+
+  SSR:
+    ./components/account/ManageSessions.tsx
+    ./pages/settings/security.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/apiKey/NewAPIKey.tsx:7:1
+Module not found: Can't resolve 'swr'
+[0m [90m  5 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { toast } [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { useSWRConfig } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m [33mModal[39m [36mfrom[39m [32m'../shared/Modal'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { defaultHeaders } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/apiKey/NewAPIKey.tsx
+    ./components/apiKey/APIKeys.tsx
+    ./components/apiKey/APIKeysContainer.tsx
+    ./pages/teams/[slug]/api-keys.tsx
+
+  SSR:
+    ./components/apiKey/NewAPIKey.tsx
+    ./components/apiKey/APIKeys.tsx
+    ./components/apiKey/APIKeysContainer.tsx
+    ./pages/teams/[slug]/api-keys.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/invitation/InviteViaEmail.tsx:3:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m { [33mButton[39m[33m,[39m [33mInput[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/invitation/InviteViaEmail.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./components/invitation/InviteViaEmail.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/invitation/InviteViaLink.tsx:2:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/invitation/InviteViaLink.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./components/invitation/InviteViaLink.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/layouts/AccountLayout.tsx:3:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mAppShell[39m [36mfrom[39m [32m'../shared/shell/AppShell'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mSWRConfig[39m } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAccountLayoutProps[39m {
+ [90m 6 |[39m   children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m[33m;[39m[0m
+
+
+
+Import traces:
+  #1 [Browser]:
+    ./components/layouts/AccountLayout.tsx
+    ./pages/404.tsx
+
+  #2 [Browser]:
+    ./components/layouts/AccountLayout.tsx
+    ./pages/500.tsx
+
+  #3 [SSR]:
+    ./components/layouts/AccountLayout.tsx
+    ./pages/404.tsx
+
+  #4 [SSR]:
+    ./components/layouts/AccountLayout.tsx
+    ./pages/_app.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useAPIKeys.ts:3:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mApiKey[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m useSWR[33m,[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 5 |[39m
+ [90m 6 |[39m [36mconst[39m useAPIKeys [33m=[39m (slug[33m:[39m string [33m|[39m undefined) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useAPIKeys.ts
+    ./components/apiKey/APIKeys.tsx
+    ./components/apiKey/APIKeysContainer.tsx
+    ./pages/teams/[slug]/api-keys.tsx
+
+  SSR:
+    ./hooks/useAPIKeys.ts
+    ./components/apiKey/APIKeys.tsx
+    ./components/apiKey/APIKeysContainer.tsx
+    ./pages/teams/[slug]/api-keys.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useInvitation.ts:1:1
+Module not found: Can't resolve 'swr'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m useSWR [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useInvitation.ts
+    ./pages/invitations/[token].tsx
+
+  SSR:
+    ./hooks/useInvitation.ts
+    ./pages/invitations/[token].tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useInvitations.ts:1:1
+Module not found: Can't resolve 'swr'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m useSWR[33m,[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useInvitations.ts
+    ./components/invitation/PendingInvitations.tsx
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./hooks/useInvitations.ts
+    ./components/invitation/PendingInvitations.tsx
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/usePermissions.ts:5:1
+Module not found: Can't resolve 'swr'
+[0m [90m 3 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { useEffect[33m,[39m useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m useSWR [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m usePermissions [33m=[39m () [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/usePermissions.ts
+    ./hooks/useCanAccess.ts
+    ./components/shared/AccessControl.tsx
+    ./pages/teams/[slug]/settings.tsx
+
+  SSR:
+    ./hooks/usePermissions.ts
+    ./hooks/useCanAccess.ts
+    ./components/shared/AccessControl.tsx
+    ./pages/teams/[slug]/settings.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useTeam.ts:4:1
+Module not found: Can't resolve 'swr'
+[0m [90m 2 |[39m [36mimport[39m type { [33mTeam[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/router'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m useSWR [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [36mconst[39m useTeam [33m=[39m (slug[33m?[39m[33m:[39m string) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useTeam.ts
+    ./pages/teams/[slug]/audit-logs.tsx
+
+  SSR:
+    ./hooks/useTeam.ts
+    ./pages/teams/[slug]/audit-logs.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useTeamMembers.ts:3:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m type { [33mTeamMember[39m[33m,[39m [33mUser[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m useSWR[33m,[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 5 |[39m
+ [90m 6 |[39m [36mexport[39m type [33mTeamMemberWithUser[39m [33m=[39m [33mTeamMember[39m [33m&[39m { user[33m:[39m [33mUser[39m }[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useTeamMembers.ts
+    ./components/team/Members.tsx
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./hooks/useTeamMembers.ts
+    ./components/team/Members.tsx
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useTeams.ts:2:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m useSWR[33m,[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m type { [33mApiResponse[39m[33m,[39m [33mTeamWithMemberCount[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m useTeams [33m=[39m () [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useTeams.ts
+    ./pages/dashboard.tsx
+
+  SSR:
+    ./hooks/useTeams.ts
+    ./pages/dashboard.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useWebhook.ts:3:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m type { [33mEndpointOut[39m } [36mfrom[39m [32m'svix'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m useSWR[33m,[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 5 |[39m
+ [90m 6 |[39m [36mconst[39m useWebhook [33m=[39m (slug[33m:[39m string[33m,[39m endpointId[33m:[39m string [33m|[39m [36mnull[39m) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useWebhook.ts
+    ./components/webhook/EditWebhook.tsx
+    ./components/webhook/index.ts
+    ./pages/teams/[slug]/webhooks.tsx
+
+  SSR:
+    ./hooks/useWebhook.ts
+    ./components/webhook/EditWebhook.tsx
+    ./components/webhook/index.ts
+    ./pages/teams/[slug]/webhooks.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./hooks/useWebhooks.ts:3:1
+Module not found: Can't resolve 'swr'
+[0m [90m 1 |[39m [36mimport[39m fetcher [36mfrom[39m [32m'@/lib/fetcher'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m type { [33mEndpointOut[39m } [36mfrom[39m [32m'svix'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m useSWR[33m,[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+ [90m 5 |[39m
+ [90m 6 |[39m [36mconst[39m useWebhooks [33m=[39m (slug[33m:[39m string) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Browser:
+    ./hooks/useWebhooks.ts
+    ./components/webhook/Webhooks.tsx
+    ./pages/teams/[slug]/webhooks.tsx
+
+  SSR:
+    ./hooks/useWebhooks.ts
+    ./components/webhook/Webhooks.tsx
+    ./pages/teams/[slug]/webhooks.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/teams/[slug]/billing.tsx:1:1
+Module not found: Can't resolve 'swr'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m useSWR [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { [33mGetServerSidePropsContext[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { serverSideTranslations } [36mfrom[39m [32m'next-i18next/serverSideTranslations'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/account/UpdatePassword.tsx:5:1
+Module not found: Can't resolve 'yup'
+[0m [90m 3 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mInputWithLabel[39m } [36mfrom[39m [32m'@/components/shared'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { defaultHeaders[33m,[39m passwordPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/account/UpdatePassword.tsx
+    ./pages/settings/security.tsx
+
+  SSR:
+    ./components/account/UpdatePassword.tsx
+    ./pages/settings/security.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/Join.tsx:10:1
+Module not found: Can't resolve 'yup'
+[0m [90m  8 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m [33mTogglePasswordVisibility[39m [36mfrom[39m [32m'../shared/TogglePasswordVisibility'[39m[33m;[39m
+ [90m 12 |[39m [36mimport[39m [33mAgreeMessage[39m [36mfrom[39m [32m'./AgreeMessage'[39m[33m;[39m
+ [90m 13 |[39m [36mimport[39m [33mGoogleReCAPTCHA[39m [36mfrom[39m [32m'../shared/GoogleReCAPTCHA'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/Join.tsx
+    ./pages/auth/join.tsx
+
+  SSR:
+    ./components/auth/Join.tsx
+    ./pages/auth/join.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/JoinWithInvitation.tsx:19:1
+Module not found: Can't resolve 'yup'
+[0m [90m 17 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 18 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 19 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 20 |[39m [36mimport[39m [33mTogglePasswordVisibility[39m [36mfrom[39m [32m'../shared/TogglePasswordVisibility'[39m[33m;[39m
+ [90m 21 |[39m [36mimport[39m { useRef[33m,[39m useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 22 |[39m [36mimport[39m [33mAgreeMessage[39m [36mfrom[39m [32m'./AgreeMessage'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/JoinWithInvitation.tsx
+    ./pages/auth/join.tsx
+
+  SSR:
+    ./components/auth/JoinWithInvitation.tsx
+    ./pages/auth/join.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/MagicLink.tsx:13:1
+Module not found: Can't resolve 'yup'
+[0m [90m 11 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m 12 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m
+ [90m 15 |[39m [36minterface[39m [33mMagicLinkProps[39m {
+ [90m 16 |[39m   csrfToken[33m:[39m string [33m|[39m undefined[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/MagicLink.tsx
+    ./pages/auth/magic-link.tsx
+
+  SSR:
+    ./components/auth/MagicLink.tsx
+    ./pages/auth/magic-link.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/auth/ResetPassword.tsx:14:1
+Module not found: Can't resolve 'yup'
+[0m [90m 12 |[39m [36mimport[39m { toast } [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 13 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 15 |[39m
+ [90m 16 |[39m [36mconst[39m [33mResetPassword[39m [33m=[39m () [33m=>[39m {
+ [90m 17 |[39m   [36mconst[39m [submitting[33m,[39m setSubmitting] [33m=[39m useState[33m<[39m[33mboolean[39m[33m>[39m([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/auth/ResetPassword.tsx
+    ./pages/auth/reset-password/[token].tsx
+
+  SSR:
+    ./components/auth/ResetPassword.tsx
+    ./pages/auth/reset-password/[token].tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/invitation/InviteViaEmail.tsx:2:1
+Module not found: Can't resolve 'yup'
+[0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/invitation/InviteViaEmail.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./components/invitation/InviteViaEmail.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/invitation/InviteViaLink.tsx:1:1
+Module not found: Can't resolve 'yup'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { mutate } [36mfrom[39m [32m'swr'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/invitation/InviteViaLink.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+  SSR:
+    ./components/invitation/InviteViaLink.tsx
+    ./components/invitation/InviteMember.tsx
+    ./components/invitation/index.ts
+    ./pages/teams/[slug]/members.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/team/CreateTeam.tsx:11:1
+Module not found: Can't resolve 'yup'
+[0m [90m  9 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m type { [33mApiResponse[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m [36mimport[39m [33mModal[39m [36mfrom[39m [32m'../shared/Modal'[39m[33m;[39m
+ [90m 13 |[39m [36mimport[39m { [33mInputWithLabel[39m } [36mfrom[39m [32m'../shared'[39m[33m;[39m
+ [90m 14 |[39m[0m
+
+
+
+Import traces:
+  #1 [Browser]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/Teams.tsx
+    ./pages/teams/index.tsx
+
+  #2 [Browser]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/index.ts
+    ./pages/teams/index.tsx
+
+  #3 [SSR]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/Teams.tsx
+    ./pages/teams/index.tsx
+
+  #4 [SSR]:
+    ./components/team/CreateTeam.tsx
+    ./components/team/index.ts
+    ./pages/teams/index.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./components/webhook/Form.tsx:8:1
+Module not found: Can't resolve 'yup'
+[0m [90m  6 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m type { [33mWebhookFormSchema[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m [33mModal[39m [36mfrom[39m [32m'../shared/Modal'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { [33mEventTypes[39m } [36mfrom[39m [32m'@/components/webhook'[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m { maxLengthPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Browser:
+    ./components/webhook/Form.tsx
+    ./components/webhook/EditWebhook.tsx
+    ./components/webhook/index.ts
+    ./pages/teams/[slug]/webhooks.tsx
+
+  SSR:
+    ./components/webhook/Form.tsx
+    ./components/webhook/EditWebhook.tsx
+    ./components/webhook/index.ts
+    ./pages/teams/[slug]/webhooks.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/forgot-password.tsx:17:1
+Module not found: Can't resolve 'yup'
+[0m [90m 15 |[39m [36mimport[39m toast [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 16 |[39m [36mimport[39m type { [33mApiResponse[39m[33m,[39m [33mNextPageWithLayout[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 18 |[39m [36mimport[39m [33mGoogleReCAPTCHA[39m [36mfrom[39m [32m'@/components/shared/GoogleReCAPTCHA'[39m[33m;[39m
+ [90m 19 |[39m [36mimport[39m [33mReCAPTCHA[39m [36mfrom[39m [32m'react-google-recaptcha'[39m[33m;[39m
+ [90m 20 |[39m [36mimport[39m env [36mfrom[39m [32m'@/lib/env'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/login.tsx:6:1
+Module not found: Can't resolve 'yup'
+[0m [90m 4 |[39m } [36mfrom[39m [32m'next'[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mLink[39m [36mfrom[39m [32m'next/link'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { useFormik } [36mfrom[39m [32m'formik'[39m[33m;[39m
+ [90m 9 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'react-daisyui'[39m[33m;[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/resend-email-token.tsx:15:1
+Module not found: Can't resolve 'yup'
+[0m [90m 13 |[39m [36mimport[39m { useTranslation } [36mfrom[39m [32m'next-i18next'[39m[33m;[39m
+ [90m 14 |[39m [36mimport[39m { [33mApiResponse[39m[33m,[39m [33mNextPageWithLayout[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 15 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 16 |[39m
+ [90m 17 |[39m [36mconst[39m [33mVerifyAccount[39m[33m:[39m [33mNextPageWithLayout[39m[33m<[39m
+ [90m 18 |[39m   [33mInferGetServerSidePropsType[39m[33m<[39m[36mtypeof[39m getServerSideProps[33m>[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./pages/auth/sso/index.tsx:15:1
+Module not found: Can't resolve 'yup'
+[0m [90m 13 |[39m [36mimport[39m { toast } [36mfrom[39m [32m'react-hot-toast'[39m[33m;[39m
+ [90m 14 |[39m [36mimport[39m type { [33mNextPageWithLayout[39m } [36mfrom[39m [32m'types'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 15 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mYup[39m [36mfrom[39m [32m'yup'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 16 |[39m [36mimport[39m [33mHead[39m [36mfrom[39m [32m'next/head'[39m[33m;[39m
+ [90m 17 |[39m [36mimport[39m { maxLengthPolicies } [36mfrom[39m [32m'@/lib/common'[39m[33m;[39m
+ [90m 18 |[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/actions/bookings.ts:6:1
+Module not found: Can't resolve 'zod'
+[0m [90m 4 |[39m [36mimport[39m { redirect } [36mfrom[39m [32m'next/navigation'[39m
+ [90m 5 |[39m [36mimport[39m [33m*[39m [36mas[39m bookingsQuery [36mfrom[39m [32m'@/lib/queries/bookings'[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m'zod'[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [90m// Types[39m
+ [90m 9 |[39m type [33mActionState[39m [33m=[39m {[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/zod/primitives.ts:1:1
+Module not found: Can't resolve 'zod'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { z } [36mfrom[39m [32m'zod'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { isValidDomain[33m,[39m maxLengthPolicies[33m,[39m passwordPolicies } [36mfrom[39m [32m'../common'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { [33mRole[39m } [36mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+ [90m 4 |[39m[0m
+
+
+
+Import traces:
+  Route:
+    ./lib/zod/primitives.ts
+    ./lib/zod/schema.ts
+    ./pages/api/password.ts
+
+  SSR:
+    ./lib/zod/primitives.ts
+    ./lib/zod/schema.ts
+    ./models/team.ts
+    ./pages/teams/switch.tsx
+
+  Browser:
+    ./lib/zod/primitives.ts
+    ./lib/zod/schema.ts
+    ./components/team/TeamSettings.tsx
+    ./components/team/index.ts
+    ./pages/teams/[slug]/sso.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/zod/schema.ts:1:1
+Module not found: Can't resolve 'zod'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { z } [36mfrom[39m [32m'zod'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m { slugify } [36mfrom[39m [32m'../server-common'[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m {
+ [90m 4 |[39m   teamName[33m,[39m[0m
+
+
+
+Import traces:
+  Route:
+    ./lib/zod/schema.ts
+    ./pages/api/password.ts
+
+  SSR:
+    ./lib/zod/schema.ts
+    ./models/team.ts
+    ./pages/teams/switch.tsx
+
+  Browser:
+    ./lib/zod/schema.ts
+    ./components/team/TeamSettings.tsx
+    ./components/team/index.ts
+    ./pages/teams/[slug]/sso.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./components/shared/Badge.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/shared/shell/NavigationItems.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/team/TeamTab.tsx:11:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/nextAuth.ts:14:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/api/auth/custom-signout.ts:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/api/password.ts:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/api/sessions/index.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/teams/switch.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/billing/PaymentButton.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./tailwind.config.js:13:49)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/account/UpdateEmail.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/account/UpdateName.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/account/UpdatePassword.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/apiKey/NewAPIKey.tsx:11:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/Join.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/JoinWithInvitation.tsx:12:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/MagicLink.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/ResetPassword.tsx:7:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/invitation/InviteViaEmail.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/invitation/InviteViaLink.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/team/CreateTeam.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/team/TeamSettings.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/webhook/Form.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/forgot-password.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/login.tsx:8:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/resend-email-token.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/sso/index.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/api/import-hack.ts:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/email/sendEmail.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/api/import-hack.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/shared/GoogleReCAPTCHA.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/404.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/500.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/slack.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/stripe.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/svix.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/account/ManageSessions.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/apiKey/NewAPIKey.tsx:7:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/invitation/InviteViaEmail.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/invitation/InviteViaLink.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/layouts/AccountLayout.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useAPIKeys.ts:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useInvitation.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useInvitations.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/usePermissions.ts:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useTeam.ts:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useTeamMembers.ts:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useTeams.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useWebhook.ts:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./hooks/useWebhooks.ts:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/teams/[slug]/billing.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/account/UpdatePassword.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/Join.tsx:10:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/JoinWithInvitation.tsx:19:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/MagicLink.tsx:13:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/auth/ResetPassword.tsx:14:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/invitation/InviteViaEmail.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/invitation/InviteViaLink.tsx:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/team/CreateTeam.tsx:11:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/webhook/Form.tsx:8:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/forgot-password.tsx:17:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/login.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/resend-email-token.tsx:15:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./pages/auth/sso/index.tsx:15:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/actions/bookings.ts:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/zod/primitives.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/zod/schema.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+ ELIFECYCLE  Command failed with exit code 1.

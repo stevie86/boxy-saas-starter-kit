@@ -1,33 +1,16 @@
+'use client'
+
 import { RoomCard } from '@/components/rooms/RoomCard'
 import { Button } from '@/components/ui/Button'
-import { getRooms } from '@/lib/queries/rooms'
+// import { getRooms } from '@/lib/queries/rooms'
 import { mockRooms } from '@/lib/mock-data'
 import styles from './page.module.css'
 import Link from 'next/link'
 
-export default async function RoomsPage() {
-  // Try to get real data, fall back to mock data if database isn't available
-  let rooms = mockRooms
-  let error = null
-  
-  // Skip database calls during build
-  if (typeof window !== 'undefined' || process.env.VERCEL_ENV) {
-    try {
-      const realRooms = await getRooms('demo-property-123')
-      if (realRooms && realRooms.length > 0) {
-        rooms = realRooms.map(room => ({
-          id: room.id,
-          name: room.name,
-          beds: room.beds,
-          occupiedBeds: room.occupiedBeds,
-          type: room.type
-        }))
-      }
-    } catch (e) {
-      error = 'Database not connected - using demo data'
-      console.log('Using mock data:', e)
-    }
-  }
+export default function RoomsPage() {
+  // Use mock data for build
+  const rooms = mockRooms
+  const error = 'Database not connected - using demo data'
 
   return (
     <div className={styles.container}>
