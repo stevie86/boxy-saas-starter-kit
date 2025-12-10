@@ -93,7 +93,7 @@
   - **Property 17: Mobile-appropriate input types**
   - **Validates: Requirements 7.4**
 
-- [ ] 7. Implement room UI components
+- [x] 7. Implement room UI components
   - Create RoomCard component at `components/rooms/RoomCard.tsx` as Server Component
   - Implement visual indicators (green/yellow/red) based on occupation status
   - Display room name, total beds, occupied beds, and available beds
@@ -109,7 +109,7 @@
   - **Property 2: Occupation visual indicators**
   - **Validates: Requirements 1.4**
 
-- [ ] 8. Implement booking UI components
+- [x] 8. Implement booking UI components
   - Create BookingCard component at `components/bookings/BookingCard.tsx` as Server Component
   - Display guest name, room name, check-in date, check-out date, and booking status
   - Create BookingForm component at `components/bookings/BookingForm.tsx` as Client Component
@@ -143,7 +143,7 @@
   - Implement client-side navigation between pages
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 4.1, 4.2, 4.3, 4.4, 8.3, 8.4_
 
-- [ ] 11. Create dashboard layout and navigation
+- [x] 11. Create dashboard layout and navigation
   - Create dashboard layout at `app/(dashboard)/layout.tsx`
   - Implement touch-friendly navigation menu
   - Create dashboard home page at `app/(dashboard)/page.tsx` with overview stats

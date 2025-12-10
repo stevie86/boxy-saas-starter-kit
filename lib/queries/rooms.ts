@@ -1,5 +1,5 @@
 import { prisma } from '../db'
-import { Room, Booking, BookingBed } from '@prisma/client'
+import { Room, Booking } from '@prisma/client'
 import { calculateRoomOccupation, OccupationCalculation } from '../utils/occupation'
 import { getCurrentDate } from '../utils/dates'
 
@@ -82,7 +82,7 @@ export async function getRooms(
       occupiedBeds: Math.min(occupiedBeds, room.beds), // Ensure invariant
       availableBeds: Math.max(availableBeds, 0),
       occupationRate
-    }
+    } as RoomWithOccupation
   })
 }
 
@@ -125,13 +125,13 @@ export async function getRoomById(id: string): Promise<RoomWithOccupation | null
     occupiedBeds: Math.min(occupiedBeds, room.beds),
     availableBeds: Math.max(availableBeds, 0),
     occupationRate
-  }
+  } as RoomWithOccupation
 }
 
 /**
  * Create a new room
  */
-export async function createRoom(data: CreateRoomInput): Promise<Room> {
+export async function createRoom(data: CreateRoomInput) {
   // Validate input
   if (!data.name || data.name.trim().length === 0) {
     throw new Error('Room name is required and cannot be empty')
@@ -170,7 +170,7 @@ export async function createRoom(data: CreateRoomInput): Promise<Room> {
 /**
  * Update an existing room
  */
-export async function updateRoom(id: string, data: Partial<CreateRoomInput>): Promise<Room> {
+export async function updateRoom(id: string, data: Partial<CreateRoomInput>) {
   // Validate if name is being updated
   if (data.name !== undefined) {
     if (!data.name || data.name.trim().length === 0) {

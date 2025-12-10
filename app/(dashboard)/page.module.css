@@ -68,15 +68,31 @@
   gap: 16px;
 }
 
+.actionLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  min-height: 44px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.actionLink:hover {
+  transform: translateY(-4px);
+}
+
 .actionCard {
   cursor: pointer;
   text-align: center;
   padding: 32px 20px;
   transition: all 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.actionCard:hover {
-  transform: translateY(-4px);
+.actionLink:hover .actionCard {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 

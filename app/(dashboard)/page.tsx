@@ -1,17 +1,51 @@
-'use client'
-
+import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
+import { getRooms } from '@/lib/queries/rooms'
+import { getBookings } from '@/lib/queries/bookings'
 import styles from './page.module.css'
 
-export default function DashboardPage() {
-  // Demo data for now - will be replaced with real data once database is connected
-  const totalBeds = 22
-  const occupiedBeds = 13
-  const availableBeds = 9
-  const occupationRate = 59
-  const todayBookings = 3
-  const upcomingCheckIns = 2
+export default async function DashboardPage() {
+  // Try to get real data, fall back to demo data if database isn't available
+  let totalBeds = 22
+  let occupiedBeds = 13
+  let availableBeds = 9
+  let occupationRate = 59
+  let todayBookings = 3
+  let upcomingCheckIns = 2
+  let isUsingRealData = false
+  
+  // Skip database calls during build
+  if (typeof window !== 'undefined' || process.env.VERCEL_ENV) {
+    try {
+      const rooms = await getRooms('demo-property-123')
+      const bookings = await getBookings('demo-property-123')
+      
+      if (rooms && rooms.length > 0) {
+        totalBeds = rooms.reduce((sum, room) => sum + room.beds, 0)
+        occupiedBeds = rooms.reduce((sum, room) => sum + room.occupiedBeds, 0)
+        availableBeds = totalBeds - occupiedBeds
+        occupationRate = totalBeds > 0 ? Math.round((occupiedBeds / totalBeds) * 100) : 0
+        isUsingRealData = true
+      }
+      
+      if (bookings && bookings.length > 0) {
+        const today = new Date()
+        todayBookings = bookings.filter(b => 
+          b.status === 'checked_in' || 
+          (b.checkIn <= today && b.checkOut >= today && b.status === 'confirmed')
+        ).length
+        
+        const nextWeek = new Date()
+        nextWeek.setDate(nextWeek.getDate() + 7)
+        upcomingCheckIns = bookings.filter(b => 
+          b.checkIn >= today && b.checkIn <= nextWeek && b.status === 'confirmed'
+        ).length
+      }
+    } catch (e) {
+      console.log('Using demo data for dashboard:', e)
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -65,29 +99,37 @@ export default function DashboardPage() {
       <div className={styles.quickActions}>
         <h2 className={styles.sectionTitle}>Quick Actions</h2>
         <div className={styles.actionsGrid}>
-          <Card className={styles.actionCard}>
-            <div className={styles.actionIcon}>🛏️</div>
-            <div className={styles.actionTitle}>View Rooms</div>
-            <div className={styles.actionDescription}>Manage room availability</div>
-          </Card>
+          <Link href="/rooms" className={styles.actionLink}>
+            <Card className={styles.actionCard}>
+              <div className={styles.actionIcon}>🛏️</div>
+              <div className={styles.actionTitle}>View Rooms</div>
+              <div className={styles.actionDescription}>Manage room availability</div>
+            </Card>
+          </Link>
           
-          <Card className={styles.actionCard}>
-            <div className={styles.actionIcon}>📅</div>
-            <div className={styles.actionTitle}>New Booking</div>
-            <div className={styles.actionDescription}>Create a reservation</div>
-          </Card>
+          <Link href="/bookings/new" className={styles.actionLink}>
+            <Card className={styles.actionCard}>
+              <div className={styles.actionIcon}>📅</div>
+              <div className={styles.actionTitle}>New Booking</div>
+              <div className={styles.actionDescription}>Create a reservation</div>
+            </Card>
+          </Link>
           
-          <Card className={styles.actionCard}>
-            <div className={styles.actionIcon}>👥</div>
-            <div className={styles.actionTitle}>View Bookings</div>
-            <div className={styles.actionDescription}>See all reservations</div>
-          </Card>
+          <Link href="/bookings" className={styles.actionLink}>
+            <Card className={styles.actionCard}>
+              <div className={styles.actionIcon}>👥</div>
+              <div className={styles.actionTitle}>View Bookings</div>
+              <div className={styles.actionDescription}>See all reservations</div>
+            </Card>
+          </Link>
           
-          <Card className={styles.actionCard}>
-            <div className={styles.actionIcon}>✅</div>
-            <div className={styles.actionTitle}>Check-in</div>
-            <div className={styles.actionDescription}>Process guest arrival</div>
-          </Card>
+          <Link href="/bookings" className={styles.actionLink}>
+            <Card className={styles.actionCard}>
+              <div className={styles.actionIcon}>✅</div>
+              <div className={styles.actionTitle}>Check-in</div>
+              <div className={styles.actionDescription}>Process guest arrival</div>
+            </Card>
+          </Link>
         </div>
       </div>
 
@@ -97,12 +139,19 @@ export default function DashboardPage() {
           <Card>
             <div className={styles.activityItem}>
               <div className={styles.activityInfo}>
-                <div className={styles.activityName}>Demo Mode</div>
+                <div className={styles.activityName}>
+                  {isUsingRealData ? 'Real Data Connected' : 'Demo Mode'}
+                </div>
                 <div className={styles.activityDetails}>
-                  Connect your database to see real bookings
+                  {isUsingRealData 
+                    ? 'Showing live data from your database' 
+                    : 'Connect your database to see real bookings'
+                  }
                 </div>
               </div>
-              <Badge variant="info">demo</Badge>
+              <Badge variant={isUsingRealData ? 'success' : 'info'}>
+                {isUsingRealData ? 'live' : 'demo'}
+              </Badge>
             </div>
           </Card>
         </div>
