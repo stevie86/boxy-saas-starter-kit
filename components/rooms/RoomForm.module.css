@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.errorMessage {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #991b1b;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+  }
+  
+  .form {
+    gap: 20px;
+  }
+}

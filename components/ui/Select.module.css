@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.select {
+  /* Touch-optimized minimum size */
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.select.error {
+  border-color: #ef4444;
+}
+
+.select.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.select:disabled {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+.helperText {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 48px; /* Larger touch target on mobile */
+  }
+}
