@@ -1,100 +1,116 @@
-'use server'
+'use server';
 
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
-import * as bookingsQuery from '@/lib/queries/bookings'
-import { z } from 'zod'
+import { z } from 'zod';
+import prisma from '@/lib/db';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
-// Types
-type ActionState = {
-  success?: boolean
-  error?: string
-  data?: any
-}
+const BookingSchema = z.object({
+  roomId: z.string().min(1, 'Room is required'),
+  guestName: z.string().min(1, 'Guest Name is required'),
+  checkIn: z.coerce.date(),
+  checkOut: z.coerce.date(),
+});
 
-// Zod Schema for validation
-const CreateBookingSchema = z.object({
-  propertyId: z.string(),
-  guestName: z.string().min(1, "Guest name is required"),
-  checkIn: z.string().transform(str => new Date(str)),
-  checkOut: z.string().transform(str => new Date(str)),
-  roomId: z.string(),
-  bedCount: z.coerce.number().min(1),
-  totalAmount: z.coerce.number().min(0),
-  notes: z.string().optional()
-})
+export async function createBooking(propertyId: string, prevState: any, formData: FormData) {
+  const validatedFields = BookingSchema.safeParse({
+    roomId: formData.get('roomId'),
+    guestName: formData.get('guestName'), // Simplified: directly taking name for now, or creating Guest?
+    checkIn: formData.get('checkIn'),
+    checkOut: formData.get('checkOut'),
+  });
 
-/**
- * Create a new booking (Server Action)
- */
-export async function createBookingAction(prevState: ActionState, formData: FormData): Promise<ActionState> {
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Validation Error',
+    };
+  }
+
+  const { roomId, guestName, checkIn, checkOut } = validatedFields.data;
+
+  if (checkOut <= checkIn) {
+    return {
+      message: 'Check-out date must be after check-in date.',
+    };
+  }
+
   try {
-    // 1. Validate Form Data
-    const rawData = {
-      propertyId: formData.get('propertyId'),
-      guestName: formData.get('guestName'),
-      checkIn: formData.get('checkIn'),
-      checkOut: formData.get('checkOut'),
-      roomId: formData.get('roomId'),
-      bedCount: formData.get('bedCount'),
-      totalAmount: formData.get('totalAmount'), // In cents usually, assumption here
-      notes: formData.get('notes'),
+    // 1. Check Availability
+    // Find all bookings for this room that overlap with the requested dates.
+    // Overlap: existing.start < requested.end && existing.end > requested.start
+    
+    // We need to query BookingBed to see how many beds in this room are taken.
+    // Since BookingBed doesn't have dates, we look at the parent Booking.
+    
+    const overlappingBookings = await prisma.bookingBed.count({
+      where: {
+        roomId: roomId,
+        booking: {
+          status: { notIn: ['cancelled'] },
+          checkIn: { lt: checkOut },
+          checkOut: { gt: checkIn },
+        },
+      },
+    });
+
+    // Get Room Capacity
+    const room = await prisma.room.findUnique({
+      where: { id: roomId },
+    });
+
+    if (!room) {
+      return { message: 'Room not found.' };
     }
 
-    const validated = CreateBookingSchema.parse(rawData)
-
-    // 2. Call DB Query
-    const booking = await bookingsQuery.createBooking({
-      propertyId: validated.propertyId,
-      guestName: validated.guestName,
-      checkIn: validated.checkIn,
-      checkOut: validated.checkOut,
-      totalAmount: validated.totalAmount,
-      beds: [{
-        roomId: validated.roomId,
-        bedCount: validated.bedCount
-      }],
-      status: 'confirmed'
-    })
-
-    // 3. Revalidate and Return
-    revalidatePath('/bookings')
-    revalidatePath('/rooms') // Occupation changes
-    return { success: true, data: booking }
-
-  } catch (error) {
-    console.error('Failed to create booking:', error)
-    if (error instanceof z.ZodError) {
-      return { error: error.issues[0].message }
+    if (overlappingBookings >= room.beds) {
+      return { message: 'Room is fully booked for these dates.' };
     }
-    return { error: 'Failed to create booking. Please try again.' }
-  }
-}
 
-/**
- * Cancel a booking (Server Action)
- */
-export async function cancelBookingAction(bookingId: string) {
-  try {
-    await bookingsQuery.cancelBooking(bookingId)
-    revalidatePath('/bookings')
-    revalidatePath('/rooms')
-    return { success: true }
-  } catch (error) {
-    console.error('Failed to cancel booking:', error)
-    return { error: 'Failed to cancel booking' }
-  }
-}
+    // 2. Create Guest (Simple inline creation for MVP)
+    // In a full app, we'd search for existing guests or use a Guest ID.
+    // Schema requires firstName, lastName. simpler to split name.
+    const [firstName, ...lastNameParts] = guestName.split(' ');
+    const lastName = lastNameParts.join(' ') || 'Guest';
 
-/**
- * Check-in a guest (Server Action)
- */
-export async function checkInBookingAction(bookingId: string) {
-  try {
-    await bookingsQuery.updateBooking(bookingId, { status: 'checked_in' })
-    revalidatePath('/bookings')
-    return { success: true }
+    const guest = await prisma.guest.create({
+      data: {
+        propertyId,
+        firstName,
+        lastName,
+      }
+    });
+
+    // 3. Create Booking
+    const booking = await prisma.booking.create({
+      data: {
+        propertyId,
+        guestId: guest.id,
+        checkIn,
+        checkOut,
+        status: 'confirmed',
+        totalAmount: room.pricePerNight, // Simple calculation: 1 night * price? 
+        // Logic: Calculate nights * price.
+      },
+    });
+
+    // 4. Create BookingBed (Allocate 1 bed)
+    await prisma.bookingBed.create({
+      data: {
+        bookingId: booking.id,
+        roomId: roomId,
+        bedLabel: 'Auto-Assigned', // Placeholder for specific bed selection
+        pricePerNight: room.pricePerNight,
+      }
+    });
+
+    revalidatePath(`/properties/${propertyId}`);
+    // redirect(`/properties/${propertyId}`); // stay on page or go to list?
+    // Let's redirect to bookings list
   } catch (error) {
-    return { error: 'Failed to check in' }
+    console.error('Booking Error:', error);
+    return { message: 'Database Error: Failed to create booking.' };
   }
+
+  redirect(`/properties/${propertyId}/bookings`);
 }
