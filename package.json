@@ -21,7 +21,8 @@
     "db:studio": "prisma studio",
     "test": "jest",
     "test:e2e": "playwright test",
-    "test:all": "pnpm test && pnpm test:e2e"
+    "test:all": "pnpm test && pnpm test:e2e",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "node prisma/seed.mjs"
