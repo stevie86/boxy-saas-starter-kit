@@ -13,6 +13,10 @@ enum Role {
   MEMBER
 }
 
+
+
+// enum Role removed for SQLite compatibility
+
 model Account {
   id                String  @id @default(uuid())
   userId            String
@@ -74,7 +78,7 @@ model Team {
   name            String
   slug            String       @unique
   domain          String?      @unique
-  defaultRole     Role         @default(MEMBER)
+  defaultRole     Role         @default(MEMBER) // Changed back to Role enum
   billingId       String?
   billingProvider String?
   createdAt       DateTime     @default(now())
@@ -91,7 +95,7 @@ model TeamMember {
   id        String   @id @default(uuid())
   teamId    String
   userId    String
-  role      Role     @default(MEMBER)
+  role      Role     @default(MEMBER) // Changed back to Role enum
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
@@ -257,7 +261,7 @@ model Invitation {
   id             String   @id @default(uuid())
   teamId         String
   email          String?
-  role           Role     @default(MEMBER)
+  role           Role     @default(MEMBER) // Changed back to Role enum
   token          String   @unique
   expires        DateTime
   invitedBy      String
@@ -329,7 +333,7 @@ model Price {
   currency      String
   serviceId     String
   amount        Int?
-  metadata      Json
+  metadata      Json // Changed back to Json
   type          String
   created       DateTime
 

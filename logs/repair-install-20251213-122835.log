@@ -1,0 +1,114 @@
+== Cleaning .next and node_modules ==
+== Installing deps with pnpm (prefer offline, retries) ==
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +1123
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ WARN  GET https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/long/-/long-5.3.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.4.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.4.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/inquire/-/inquire-1.1.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@types/node/-/node-20.19.26.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+Progress: resolved 1123, reused 0, downloaded 0, added 0
+ WARN  GET https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/long/-/long-5.3.2.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.4.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.4.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/inquire/-/inquire-1.1.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@types/node/-/node-20.19.26.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz error (EAI_AGAIN). Will retry in 20 seconds. 4 retries left.
+ WARN  GET https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/long/-/long-5.3.2.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.4.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.4.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/inquire/-/inquire-1.1.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@types/node/-/node-20.19.26.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz error (EAI_AGAIN). Will retry in 40 seconds. 3 retries left.
+ WARN  GET https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/long/-/long-5.3.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.4.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.4.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/inquire/-/inquire-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@types/node/-/node-20.19.26.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/long/-/long-5.3.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.4.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.4.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/inquire/-/inquire-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/@types/node/-/node-20.19.26.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz error (EAI_AGAIN). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/yargs/-/yargs-17.7.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ EAI_AGAIN  request to https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+
+FetchError: request to https://registry.npmjs.org/@boxyhq/metrics/-/metrics-0.2.11.tgz failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+    at ClientRequest.<anonymous> (/home/user/.cache/node/corepack/v1/pnpm/10.23.0/dist/pnpm.cjs:41976:18)
+    at ClientRequest.emit (node:events:508:28)
+    at emitErrorEvent (node:_http_client:108:11)
+    at TLSSocket.socketErrorListener (node:_http_client:575:5)
+    at TLSSocket.emit (node:events:520:35)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+ WARN  GET https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.14.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@grpc/proto-loader/-/proto-loader-0.8.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/cliui/-/cliui-8.0.1.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.
+ WARN  GET https://registry.npmjs.org/@js-sdsl/ordered-map/-/ordered-map-4.4.2.tgz error (EAI_AGAIN). Will retry in 10 seconds. 5 retries left.

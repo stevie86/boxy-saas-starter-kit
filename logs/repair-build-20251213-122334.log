@@ -1,0 +1,15 @@
+== Forcing Webpack build with debug and no worker threads ==
+
+> hostelpulse-clean@0.1.0 build /home/user/webdev/hostelpulse-clean
+> prisma generate && next build -- --webpack --debug
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 217ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Curious about the SQL queries Prisma ORM generates? Optimize helps you enhance your visibility: https://pris.ly/tip-2-optimize
+
+Invalid project directory provided, no such directory: /home/user/webdev/hostelpulse-clean/--webpack
+ ELIFECYCLE  Command failed with exit code 1.

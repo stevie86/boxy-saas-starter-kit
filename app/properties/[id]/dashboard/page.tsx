@@ -1,5 +1,6 @@
 import prisma from '@/lib/db';
 import Link from 'next/link';
+import { checkInBooking, checkOutBooking } from '@/app/actions/bookings'; // Import actions
 
 export const dynamic = 'force-dynamic';
 
@@ -16,33 +17,33 @@ export default async function DashboardPage({ params }: { params: Promise<{ id: 
     prisma.property.findUnique({ where: { id } }),
     prisma.room.findMany({ where: { propertyId: id } }),
     
-    // Check-ins Today
+    // Check-ins Today (Bookings confirmed and not yet checked in)
     prisma.booking.findMany({
       where: {
         propertyId: id,
         checkIn: { gte: todayStart, lt: todayEnd },
-        status: { not: 'cancelled' },
+        status: { in: ['confirmed', 'pending'] }, // Only show pending check-ins
       },
       include: { guest: true },
     }),
 
-    // Check-outs Today
+    // Check-outs Today (Bookings checked in and not yet checked out)
     prisma.booking.findMany({
       where: {
         propertyId: id,
         checkOut: { gte: todayStart, lt: todayEnd },
-        status: { not: 'cancelled' },
+        status: { in: ['checked_in'] }, // Only show those checked-in and ready to check out
       },
       include: { guest: true },
     }),
 
-    // Occupied (Overlapping Today)
+    // Occupied (Bookings that overlap today, not cancelled, and not checked out)
     prisma.booking.findMany({
       where: {
         propertyId: id,
         checkIn: { lt: todayEnd },
         checkOut: { gt: todayStart },
-        status: { not: 'cancelled' },
+        status: { notIn: ['cancelled', 'checked_out'] },
       },
       include: { beds: true },
     }),
@@ -65,7 +66,7 @@ export default async function DashboardPage({ params }: { params: Promise<{ id: 
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-gray-600">Overview for {now.toLocaleDateString()}</p>
         </div>
-        <Link href={`/properties/${id}/bookings/new`} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <Link href={`/properties/${id}/bookings/new`} className="btn btn-primary">
           New Booking
         </Link>
       </div>
@@ -111,7 +112,7 @@ export default async function DashboardPage({ params }: { params: Promise<{ id: 
               <table className="table w-full">
                 <tbody>
                   {checkIns.length === 0 ? (
-                    <tr><td className="text-center text-gray-500 py-4">No arrivals scheduled.</td></tr>
+                    <tr><td colSpan={2} className="text-center text-gray-500 py-4">No arrivals scheduled.</td></tr>
                   ) : (
                     checkIns.map(booking => (
                       <tr key={booking.id}>
@@ -119,8 +120,16 @@ export default async function DashboardPage({ params }: { params: Promise<{ id: 
                           <div className="font-bold">{booking.guest?.firstName} {booking.guest?.lastName}</div>
                           <div className="text-xs opacity-50">Code: {booking.confirmationCode || 'N/A'}</div>
                         </td>
-                        <td className="text-right">
-                          <div className="badge badge-primary badge-outline badge-sm">Confirmed</div>
+                        <td className="text-right flex items-center gap-2 justify-end">
+                          <span className="badge badge-primary badge-outline badge-sm">Confirmed</span>
+                          {booking.status === 'confirmed' && ( // Only show check-in button if confirmed
+                            <form action={checkInBooking.bind(null, id, booking.id)}>
+                              <button type="submit" className="btn btn-sm btn-success">Check In</button>
+                            </form>
+                          )}
+                           {booking.status === 'checked_in' && ( // If already checked in
+                             <span className="badge badge-success badge-sm">Checked In</span>
+                           )}
                         </td>
                       </tr>
                     ))
@@ -141,7 +150,7 @@ export default async function DashboardPage({ params }: { params: Promise<{ id: 
               <table className="table w-full">
                 <tbody>
                   {checkOuts.length === 0 ? (
-                    <tr><td className="text-center text-gray-500 py-4">No departures scheduled.</td></tr>
+                    <tr><td colSpan={2} className="text-center text-gray-500 py-4">No departures scheduled.</td></tr>
                   ) : (
                     checkOuts.map(booking => (
                       <tr key={booking.id}>
@@ -149,8 +158,16 @@ export default async function DashboardPage({ params }: { params: Promise<{ id: 
                           <div className="font-bold">{booking.guest?.firstName} {booking.guest?.lastName}</div>
                           <div className="text-xs opacity-50">Paid: {(booking.amountPaid / 100).toFixed(2)}</div>
                         </td>
-                        <td className="text-right">
-                          <div className="badge badge-warning badge-outline badge-sm">Checking Out</div>
+                        <td className="text-right flex items-center gap-2 justify-end">
+                          <span className="badge badge-warning badge-outline badge-sm">Ready for Check Out</span>
+                          {booking.status === 'checked_in' && ( // Only show check-out button if checked-in
+                            <form action={checkOutBooking.bind(null, id, booking.id)}>
+                              <button type="submit" className="btn btn-sm btn-warning">Check Out</button>
+                            </form>
+                          )}
+                          {booking.status === 'checked_out' && ( // If already checked out
+                             <span className="badge badge-error badge-sm">Checked Out</span>
+                          )}
                         </td>
                       </tr>
                     ))

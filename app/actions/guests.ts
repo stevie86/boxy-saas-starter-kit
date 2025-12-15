@@ -4,6 +4,7 @@ import { z } from 'zod';
 import prisma from '@/lib/db';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { Guest } from '@prisma/client'; // Import Guest type from Prisma
 
 const GuestSchema = z.object({
   firstName: z.string().min(1, 'First Name is required'),
@@ -13,6 +14,10 @@ const GuestSchema = z.object({
   nationality: z.string().optional(),
   documentId: z.string().optional(),
 });
+
+type GuestForExport = Pick<Guest, 'firstName' | 'lastName' | 'email' | 'phone' | 'nationality' | 'documentId'> & {
+  [key: string]: string | boolean | Date | null | undefined; // Add index signature
+};
 
 export async function createGuest(propertyId: string, prevState: any, formData: FormData) {
   const validatedFields = GuestSchema.safeParse({
@@ -54,3 +59,6 @@ export async function createGuest(propertyId: string, prevState: any, formData: 
 
   redirect(`/properties/${propertyId}/guests`);
 }
+
+
+

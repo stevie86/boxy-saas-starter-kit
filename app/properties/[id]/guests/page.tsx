@@ -1,5 +1,6 @@
 import prisma from '@/lib/db';
 import Link from 'next/link';
+// Removed import { exportGuests } from '@/app/actions/guests'; // Import exportGuests action
 
 export const dynamic = 'force-dynamic';
 
@@ -23,14 +24,20 @@ export default async function GuestsPage({ params }: { params: Promise<{ id: str
         </div>
         <div className="flex gap-2">
           <Link 
+            href={`/api/export/guests/${id}`}
+            className="btn btn-outline"
+          >
+            Export CSV
+          </Link>
+          <Link 
             href={`/properties/${id}/guests/import`}
-            className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50"
+            className="btn btn-outline"
           >
             Import CSV
           </Link>
           <Link 
             href={`/properties/${id}/guests/new`}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="btn btn-primary"
           >
             Add Guest
           </Link>
@@ -58,7 +65,9 @@ export default async function GuestsPage({ params }: { params: Promise<{ id: str
               guests.map((guest) => (
                 <tr key={guest.id}>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-medium text-gray-900">{guest.lastName}, {guest.firstName}</div>
+                    <Link href={`/properties/${id}/guests/${guest.id}`} className="text-sm font-medium text-blue-600 hover:underline">
+                      {guest.lastName}, {guest.firstName}
+                    </Link>
                     {guest.documentId && <div className="text-xs text-gray-500">ID: {guest.documentId}</div>}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">

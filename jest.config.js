@@ -10,11 +10,23 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const customJestConfig = {
   // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Uncommented this line
   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
   testPathIgnorePatterns: ['<rootDir>/tests/e2e'],
+  transformIgnorePatterns: [
+    '/node_modules/(?!next-auth|@auth/core)/', // Transform next-auth and @auth/core
+  ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+  },
+  // Add transform for TypeScript files using ts-jest
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
+  // Ensure Jest looks for .ts and .tsx files
+  testMatch: ['<rootDir>/__tests__/**/*.test.(ts|tsx)'],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

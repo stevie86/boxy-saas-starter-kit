@@ -1,5 +1,6 @@
 import prisma from '@/lib/db';
 import Link from 'next/link';
+import { exportBookings } from '@/app/actions/bookings'; // Import exportBookings action
 
 export const dynamic = 'force-dynamic';
 
@@ -28,12 +29,26 @@ export default async function BookingsPage({ params }: { params: Promise<{ id: s
           </Link>
           <h1 className="text-3xl font-bold">Bookings</h1>
         </div>
-        <Link 
-          href={`/properties/${id}/bookings/new`}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          New Booking
-        </Link>
+        <div className="flex gap-2">
+          <Link 
+            href={`/api/export/bookings/${id}`}
+            className="btn btn-outline"
+          >
+            Export CSV
+          </Link>
+          <Link 
+            href={`/properties/${id}/bookings/import`}
+            className="btn btn-outline"
+          >
+            Import CSV
+          </Link>
+          <Link 
+            href={`/properties/${id}/bookings/new`}
+            className="btn btn-primary"
+          >
+            New Booking
+          </Link>
+        </div>
       </div>
 
       <div className="bg-white rounded-lg shadow overflow-hidden">

@@ -1,0 +1,41 @@
+== Forcing Webpack build with debug and no worker threads ==
+
+> hostelpulse-clean@0.1.0 build /home/user/webdev/hostelpulse-clean
+> prisma generate && next build --webpack --debug
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 215ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Easily identify and fix slow SQL queries in your app. Optimize helps you enhance your visibility: https://pris.ly/--optimize
+
+┌─────────────────────────────────────────────────────────┐
+│  Update available 5.22.0 -> 7.1.0                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+   ▲ Next.js 16.0.8 (webpack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+
+
+Retrying 1/3...
+
+
+Retrying 1/3...
+ ✓ Compiled successfully in 24.8s
+   Running TypeScript ...
+   Collecting page data using 3 workers ...
+unhandledRejection TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')
+    at ignore-listed frames {
+  type: 'TypeError'
+}
+ ELIFECYCLE  Command failed with exit code 1.

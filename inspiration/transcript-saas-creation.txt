@@ -1,0 +1,522 @@
+# tactiq.io free youtube transcript
+# No title found
+# https://www.youtube.com/watch/g-JgaoheyTo
+
+00:00:00.000 No text
+00:00:00.080 In this video, I'm going to show you how to build an AI SAS from scratch and what's the cheapest and most reliable
+00:00:05.520 way to deploy it. And before we begin, what we need is a empty folder, which is what I have right here. So, I'm going to
+00:00:10.639 open that folder inside of cursor. And there we go. Now, we have a lot of options, right? We have codeex, cursor,
+00:00:15.920 cloth code, droid, many different coding agents, but right now I think one of the
+00:00:21.279 best is cloth code and especially after the release of Opus 4.5, which is the latest model from Enthropic. So if you
+00:00:27.279 don't have cloud code installed, just type it into Google, click on the first link. This will bring you to the official landing page from Enthropic
+00:00:33.680 where you have multiple different ways to install and use cloud code. But personally, I think it's best to use it
+00:00:39.360 in the terminal. So to do that, just copy this command, open the terminal on your computer, doesn't matter if you're using Windows or Mac, and just paste it
+00:00:45.760 in and hit enter. Once you install clot code, you should be able to open any terminal and type in clot. And this will
+00:00:46.000 No text
+00:00:51.120 start clot code inside of that project. So, as you can see, this project has no files, no folders, which means we have
+00:00:57.360 to work with cloud code to design it from scratch. So, I'm going to do shift tab, which is one of the main keyboard
+00:01:02.640 shortcuts you need to know to use cloth code. And I'm going to switch into auto accept mode, which means I don't have to click accept after every single change.
+00:01:08.720 Now, when it comes to the model, you can type in /model, and make sure to select opus 4.5. This is currently the most
+00:01:13.840 powerful model from Entropic, and hit enter. Now, if you don't want to use cloud code, another great option is Gemini 3 Pro from Google. You can use it
+00:01:20.479 inside of cursor. You can use it inside of Droid or inside of the Gemini CLI. And by the way, I've partnered with
+00:01:25.520 Gemini to do an in-person hackathon in Warso, Poland. The hackathon will take place in January of 2026, and there's
+00:01:32.159 going to be limited slots. So, if you want to participate, make sure to follow me on Instagram and DM me the word
+00:01:37.600 hackathon. So, what I'm going to do first is I'm going to create a folder named prompts. And in here, I'm going to
+00:01:38.000 No text
+00:01:42.960 create a new file named prompt_01.md. So, this is the first prompt. So, I'm going to do is go back into cloud code
+00:01:48.560 and say read prompt01. And don't worry, I'm going to break it down for you in a second. I'm say and execute what's
+00:01:54.640 inside. Nothing more, nothing less. The fewer lines of code, the better. If
+00:01:59.680 you're wondering how I'm doing this enter to the new line, because if you do shift enter, it will just send the message, right? You need to do control
+00:02:05.759 J, not command J, control J on my quest. So, boom. So, as Cloud is building this, let me break down the strategy behind
+00:02:11.840 this prompt. So, the first part, as you can see, is a broad overview of what we're trying to do. This tells clot code
+00:02:17.840 the what before the how, which prevents the AI agent from wandering and getting distracted. Then we scope out the
+00:02:23.680 boundaries, aka the features, what should be part of it, right? Yes or no questions, buying shares of outcomes, and seeing live odds. This explicitly
+00:02:30.640 states which features we want. That way, we prevent feature bloat. The coding agents are so powerful that the issue
+00:02:36.800 isn't that they add too little features, but that they add too many and they get overly excited and they keep bloating
+00:02:42.000 your codebase with unnecessary stuff. The third part of this prompt is the text stack. This is an important
+00:02:47.760 constraint for the AI agent. And this is actually one of the few decisions that you yourself as the human should do,
+00:02:53.120 right? And if you're new to coding or software architecture, just do a few, you know, researches with perplexity
+00:02:59.040 with JBT with CLA to learn about okay, what is the best framework for front end? What are the different databases,
+00:03:05.360 right? These things you can learn in a matter of a few prompts. But the text stack is essential because changing the
+00:03:11.200 text stack later on is a very very painful thing. So what you should do instead is do a deep research such as
+00:03:18.319 with perplexity what tech stack is best and then you describe your app idea in here and boom just a single deep
+00:03:24.480 research like this will give you so much things and will prevent you from making a horrible mistake that will be very
+00:03:30.080 hard and painful to correct later on. So that's the third part of this original prompt. The fourth part is this one
+00:03:36.080 telling about the deployment right and a lot of people don't think about this and this video is not just about building. There is countless videos about how to
+00:03:42.239 use cloud code and how to build with AI. The second half of this video is all about how to deploy, right? Because what
+00:03:47.680 use is building an MVP if you don't know where to host it, if you don't know how to deploy it. So that's going to be later in the video. But it's important
+00:03:54.720 to stay that in the original prompt so that as you're building, you're not shooting yourself in the foot by
+00:03:59.760 installing dependencies that are not supported by doing things in a way that will make it very difficult to deploy on
+00:04:04.799 certain platforms. That's why I specified in the first prompt. This will be deployed on a VPS using Docky. So ensure the project works with Nixpacks.
+00:04:11.360 The fifth part of the original prompt is this start by creating the project structure and detailed read me. So this is uh what it should do in the first
+00:04:17.600 prompt right very clearly we tell what we want what we want to start with and nothing else actually this is the fifth
+00:04:22.880 part the sixth part is this last sentence which says don't implement yet right so we tell it not to code yet just
+00:04:28.400 to create the architecture the documentation and to prepare it which the code that is going to come in the
+00:04:33.919 next prompt which is prompt number two so let's see what cloud code did you can see that used many different tools and it ran for like a minute and it's it's
+00:04:41.280 finished right so coding agents are more powerful than ever before building your own software is easier than ever before.
+00:04:47.759 So even if you're not a programmer, you can absolutely do this. As you can see, this prompt is written in plain English. And all I did is a bit of research ahead
+00:04:54.400 of time again using AI tools, typing in them in plain English. Okay, so let's see. First, it created these folders
+00:05:00.320 with the make directory command. Then it created a package JSON file, created the readme file. So a readme file for those
+00:05:06.720 who are new to software development, it's the main documentation file. It describes the project. It describes the
+00:05:11.919 text stack, what the database schema is, and basically it's the fastest ways for anybody to get up to speed. So, if
+00:05:17.680 somebody from outside who didn't watch this video and who didn't build a project came in, what they should start
+00:05:22.720 with is the readme file. They should look at this and it should be clearly structured to describe what we're building, what the dependencies are, and
+00:05:28.320 how to actually start using it. So, that is the purpose of the readme file. Luckily, Cloud Code created that for us.
+00:05:33.360 So, we don't have to spend time on that. So, here's the summary of what it did, these files, and the schema. Okay. So, I
+00:05:39.199 think we're ready to move to the second prompt. So, new file prompt_2. The reason I use underscore not space is
+00:05:44.800 because that is a very bad practice. The reason for that is a lot of different compilers or terminal commands stuff
+00:05:50.000 like that don't like it when there's a space, right? They think it's two separate things. So, just use a dash, use underscore. Do not use spaces in
+00:05:56.639 file and folder names. Okay, so here's the second prompt. Set up Nex.js with app router. Tailwind and create the
+00:06:02.560 basic pages. Home list markets market detail page create market page. Just UI shell with the mock data. No API yet. So
+00:06:10.240 what I'm trying to do by splitting this into multiple problems is nail each part at a time. Right? So this is the Nex.js
+00:06:17.520 front end. We're not doing the API just yet. We're trying to make sure that the front end is good and then we will add
+00:06:22.720 the API rather than trying to oneshot everything which a lot of the times the models can do. So we're trying to be
+00:06:27.919 more strategic and this allows us to check at every point that things are going well because again making these
+00:06:33.919 large refactors is more difficult later on. All right. So again, let's switch to cloth code and I'm going to rem rename
+00:06:40.479 this terminal to cloth code just for clarity. Boom. Let me zoom out a bit.
+00:06:46.000 Say good work. Now execute prompt number two. Enter. Enter. And we might need to
+00:06:52.720 hit a few approvals here. And if it gets stuck any commands, we can always run them ourselves. And we can ask it what
+00:07:00.000 to do. All right. So here's the layout tsx file. 16 editions, one removal, simple layout. And I think at the end us
+00:07:05.919 will tell us how to start the front end and how we can check it. All right. So now it's asking for approval to create a
+00:07:10.960 new directory. So we're going to approve that and we can see this is a safe command. If you're not sure just ask
+00:07:17.599 perplexity is this a safe command should be allow listed. And by the way I'm going to show you a pro tip. If you do like let's do normal search. How can I
+00:07:24.880 whitelist certain cloth code commands so that I don't have to manually approve
+00:07:31.680 them every time? You can actually create a cloth folder with settings JSON to do this. But if you don't do this again,
+00:07:37.039 just ask any AI with web searching capabilities, which all of them have, and it will tell you, right? So now I'm
+00:07:43.280 using Gemini 3 inside of perplexity to research this. In the meantime, let's switch back. You can see, okay, the UI
+00:07:49.520 has been created, and I will ask a simple and dumb question. Can I test this yet? If so, tell me how. Okay, in
+00:07:56.960 the meantime, let's switch back to perplexity. And here's the answer. So we can create a configuration file inside
+00:08:02.319 of the doc clo settings folder and we're going to tell it to do that. So boom, let's do that. I'm going to say create
+00:08:09.520 this. I will say and include an allow list of safe terminal commands like
+00:08:16.639 mkater. And actually we can probably delegate this to perplexity. Give me a list of safe terminal commands that
+00:08:24.319 coding AI agents like cloth code should be allowed to run autonomously without
+00:08:31.039 human supervision. Answer in short. Boom. A deep research because we want a comprehensive list so that we don't have
+00:08:37.200 to, you know, approve this every time. And actually there's even simpler way. If you look at the types of responses
+00:08:43.200 here, if you select number two, it should create the cloth folder itself, right? Yes. and always allow access to
+00:08:49.040 doc for this project. So I'm going to enter. So I'm going to say create a cloud folder settings JSON with an allow
+00:08:55.519 list of safe terminal commands in the root of this project. Boom. Then our
+00:09:01.519 deep research should give us a list of safe commands for autonomous agents. So I'm going to copy this. I'm going to go
+00:09:07.200 back. So we're going to allow this. Yes. Boom. We see the cloth folder. Now it should create a new file settings JSON
+00:09:13.600 in this file. And I'm doing this to speed up our workflow, right? We don't have to approve these commands every
+00:09:18.880 time if we have this settings JSON. And I'm going to say now add these commands
+00:09:24.560 into the JSON. Boom. I'm going to do save. Paste in the proxy research and do
+00:09:30.240 save. This is basic context engineering using XML tags to separate different parts of the prompt. And I'm going to
+00:09:36.320 say show me what a cloud/ settings.json should be structured like answer in
+00:09:43.360 short. and make sure that it follows the recommended schema. I don't know why it's asking for these edits even though
+00:09:49.279 I'm auto accept mode. This is a bug from cloud code. It shouldn't be asking when I'm in auto accept. There we go. It
+00:09:55.360 extended our list. Removed some and added a bunch of other safe commands. And you know, rem rseudo
+00:10:02.959 move. These are very risky. So, it's in the deny list as well. Okay, that's good. Let's get back on track here. So, if I scroll back up, we can see that we
+00:10:10.000 can run the project. So, let's just do npm install and npm rundeaf. We open a terminal again. Boom. With command J and
+00:10:16.640 make sure we are in this project. We are. Okay. And then I'm going to npm install. This will install all the
+00:10:21.920 dependencies necessary for our front end to run. Also create the node modules folder with all of the things we need.
+00:10:27.920 All right. And then we do npm rundef. This will start the development server on local 3000. Let's open that in cursor
+00:10:34.000 browser. This is a new feature of cursor 2.0. And there it is. We have a simple front end. Nothing crazy, but it works.
+00:10:40.160 And since we're running this inside of the cursor browser, we can debug it more easily. And we can even select like specific UI components, right? Specific
+00:10:46.880 divs and fine-tune them, describe how we want them to change. This is a nice feature inside of cursor. All right, so
+00:10:52.000 No text
+00:10:52.880 we have the MVP of the front end. Obviously, nothing crazy. We're going to improve this a lot, but let's switch
+00:11:00.079 back to cloud code. Let me do command I to close the sidebar. And then we're
+00:11:05.120 going to do the first prompt. So let me go boom new file prompt03
+00:11:10.320 paste it in start code execute prompt three boom while it's running let me
+00:11:16.800 explain it so add postgress connection using Prisma posgress is what we're going to use for our database and I
+00:11:22.640 would highly encourage you to stick with popular text stack right do not go into
+00:11:28.880 nosql databases unless you're an expert do not use programming languages that
+00:11:34.079 are trending or like frameworks that were just released. And the reason is very simple. They're not in the training data. If you use SQL, if you use Python,
+00:11:41.360 if you use JavaScript, there is so many tens of millions, hundreds of millions
+00:11:46.880 of lines of code of these languages, frameworks on the internet, which means
+00:11:52.640 when a new model such as Opus 4.5 is being trained, it masters those
+00:11:57.920 languages. It masters those frameworks, which means it can help you a lot using the mainstream text stack. But if you
+00:12:04.000 choose a esoteric text tag that nobody really uses, yeah, good luck. Good luck
+00:12:09.040 because the AI models will not be able to help you nearly as much. All right. So then uh create the schema from the
+00:12:14.240 readme, generate migrations, ensure database URL is read from the environment variable for do deployment,
+00:12:20.560 which means we need to create a env file. So I'm going to right click in the root level of our folder and create an
+00:12:27.360 env. This needs to be on the same level as actually I could have just copied this. So we have a env.ample. example.
+00:12:34.320 Uh, what do you want to do? I'm going to show you the proper way. What you want to do is simply copy this and then
+00:12:39.920 rename and you just remove everything and only leave it. Environment
+00:12:50.480 file where you put your API keys, your secrets and you should never ever share this to anybody and you should never
+00:12:56.560 ever commit this to GitHub. Okay, so let me see what close code did. Prisma
+00:13:01.760 schema is already created for prompt one. Okay, that's good. Everything's already set up. All right, so I guess uh
+00:13:07.200 this is what I mean when the AI models can get overly excited and they can do stuff ahead of time even though prompt
+00:13:13.519 one very clearly said just architecture docs. But okay, let's move on to prompt
+00:13:18.560 number four. Boom, there's prompt number four. So again, execute prompt number
+00:13:23.600 four. Enter. Enter. And you can easily tag files by doing the add symbol inside
+00:13:28.639 of cloud code inside of most coding agents. So here's the prompt four. Build the API routes. So that's going to be
+00:13:35.200 our back end. Create market, get markets, place bets, market odds, wire up Prisma to each endpoint, test with
+00:13:42.079 curl examples. To be honest, I don't even know what Prisma is. And the way to do proper AI development is using the AI
+00:13:50.240 tools to upscale yourself, right? So what I'm going to do is I'm going to say read prompt04 and read all the files in
+00:13:57.440 our project and explain to me what Prisma is in this context and why we
+00:14:04.880 need it. Think harder answer in short. This is the biggest difference between people who are just vibe coders and they
+00:14:11.600 don't really get anywhere. You know they might be able to build an MVP. Anybody can build an MVP, right? Anybody can
+00:14:17.040 build a V1. But the real difference is are you able to deploy it? Are you able to host it somewhere? Are you able to
+00:14:22.480 maintain the code? Are you able to get your first paying customer? Are you able to add authentication payments? Are you
+00:14:28.000 able to scale your software? These are the real questions. And the difference is people who get stuck, they don't use
+00:14:34.720 AI to upskill themselves. I don't care if you're a professional developer. I don't care if you've never coded before.
+00:14:40.000 I don't care if you're 70 years old. You can learn. Brain has neuroplasticity
+00:14:45.040 until you die. You can absolutely learn. And that's how you should be using AI to upskill yourself. First and foremost,
+00:14:51.680 I'm going to stop because uh it should not do any changes. Do not do any changes. Just explain what I asked you
+00:14:59.040 to explain. Make your answer simpler and shorter. This is a particular issue with
+00:15:04.320 Gemini 3. It is very overeager and it doesn't follow instructions, right? Um
+00:15:10.160 yeah, even when you tell it just to answer your question, you just start making code changes which is very annoying. But hey, Prisma is a bridge
+00:15:16.720 between your code and the database. Why we need a translation? Automatically turns your TypeScript code into database commands. Oh, okay. So, it's similar to
+00:15:17.000 No text
+00:15:25.360 SQL Alchemy. So, I'm going to say, oh, is it similar to SQL Alchemy? So, now
+00:15:31.839 I'm actually learning, you know, I realized that it's uh like a Oh, yeah. OM. Let's see. Yes, exactly. Prisma to
+00:15:39.440 TypeScript is what SQL Alchemy is to Python. Both are OMS that lets you define your database structure in code
+00:15:46.160 models. So this kind of simplifies you know you don't have to master SQL if you use something like Prisma or SQL alchemy
+00:15:53.519 you can define your database in your code which is good because again your
+00:15:58.959 you can get even more help from the AI models. All right so let's see we need
+00:16:04.320 approval. Okay we need to give cloud code approval. Okay it's a safe command. I don't know why it's this is annoying
+00:16:10.720 that it's asking for approval even though we created this uh settings JSON which clearly gives it approval. Maybe
+00:16:17.120 we just need to restart cloud code. It's very possible. All right, done. API routes created. And since we asked for
+00:16:24.720 curl commands, it gave me all the curl commands to do. So I'm going to ask u
+00:16:30.160 did you also wire it up in our app? So I
+00:16:35.199 can skip the curl command testing. By the way, I do recommend you learning curl at least, you know, two, three
+00:16:42.160 hours put into it, understand what it is, how to use it, you know, the different headers and stuff like that. Oh, that's that's prompt five. I'm going
+00:16:48.880 to stop it right there. So, you can interrupt cloth code anytime by pressing escape. Right? So, it was rushing ahead
+00:16:55.120 of time, but this is prompt five. So, I'm just going to create it. And this will connect the front end to the API. Right? So say now execute prompt five
+00:17:04.400 like a 10x engineer would. The fewer lines of code the better. This is
+00:17:10.160 another one of my favorite prompts. The fewer lines of code the better. And again it's to keep the codebase simple
+00:17:16.480 keep it clean to prevent the AI models for going too crazy adding too many lines of code and then nobody can
+00:17:23.520 orientate themselves in the codebase. So yeah, this problem basically tells you to make it functional end to end so that
+00:17:28.799 the user can use all these API routes and basic styling polish. Actually, we
+00:17:33.919 could probably use Gemini 3 for that because uh I think Gemini 3 Pro is right now the best at front end. So I'm going
+00:17:41.840 to say your task is to read every single front end file in our project and
+00:17:49.280 greatly improve the design and UI of our front end. Do not change any logic or
+00:17:56.480 functionality of our app. Just make it look better. Get to work. All right. So,
+00:18:02.880 Cloore is finished and we're going to launch Gemini 3 to revamp our front end.
+00:18:07.919 We still have it launched here. Uh, let me refresh this. Are we getting an error? Okay. Boom. Screenshot. We could
+00:18:15.440 debug this inside of cursor, but we're using cloud code, so it's going to be um screenshot. Uh, fix this. Oh, actually
+00:18:22.000 No text
+00:18:24.080 we didn't we didn't run this. Oops. You probably need to kill the terminal. I'm
+00:18:29.120 going to kill it. npm install again. Should probably follow what Cl is telling us, right? Boom. And then we
+00:18:34.400 need to run npm rundef again. We need postgress running quickest fix docker
+00:18:39.919 run postgress npx prisma db push. We need to also change this in our env.
+00:18:46.240 Okay. So gemini has revamped our front end. That's good to know. I'm going to say I have Docker Desktop. Can I use
+00:18:54.559 that? For simplicity, I want to show you Docker Desktop because it's you can just go to Google and type in Docker Desktop
+00:19:01.200 and install this in like 2 minutes. So, let me see if it works with that. Yes.
+00:19:06.640 Run this in your terminal. Boom. Okay. So, let's run it. We need to copy this.
+00:19:13.360 Open our env. Close this prompt file. Open our env. Change this like so. none
+00:19:19.760 of these uh new line gaps. Okay. And then uh this is the issue with
+00:19:25.360 that command. It's it's getting split into two lines. Okay. Now it should be good. Need to make sure there is the no
+00:19:32.160 new line character. Okay. Wait, let me make sure my docker is running. It
+00:19:37.200 wasn't running. Okay. That's a beginner mistake. So let's try that again. Clear. Boom.
+00:19:42.559 All right. Uh let me see. I'm going to paste this in. Is this good? And then in
+00:19:44.000 No text
+00:19:49.039 the meantime, we can clear this and do npm rundef. Let's see if this works. Open it cursor browser again. We're
+00:19:55.760 getting a different error. Oh, we didn't run the Prisma command. Okay, I'm going to do control C to kill it. So when
+00:20:01.120 you're in uh terminal, control C again, not command C. I'm on Mac OS. So when I
+00:20:06.960 say command on Windows, that's control, butt control C on Mac OS kills the
+00:20:13.440 processes, right? So that's what I did. And then let's see, we need to run this
+00:20:18.640 npx prisma db push. All right, that's good. And then we I'm going do app arrow. So when you're in terminal, you
+00:20:24.080 can do up arrow to cycle through commands you recently run. And I'm going npm rundev again. And we're going to go
+00:20:29.760 browser reload this. And there we go. Our app is loading. No markets are
+00:20:35.679 created. So let's create one. Uh will Bitcoin hit 100K in 2024? That's boring. Will BTC hit 200K in 2026? That's a
+00:20:44.159 better question. Okay, we created the market but it's not here. Okay, we also
+00:20:49.520 need to change the name of this from poly market to David market. Change all naming from poly market to David market,
+00:20:58.159 you know, just so we don't get sued. And uh I'm going to again screenshot is
+00:21:03.520 underrated. I think this is actually recording. Yeah, I mean look this is um
+00:21:08.799 this is definitely not optimal because we're using Gemini 3 for front end design and we're using cloth code for
+00:21:13.919 the logic but u hey sometimes you got to do unscalable things and what you need to do is describe the error right when I
+00:21:20.240 create a market it does not appear anywhere and then I'm going to do here
+00:21:25.440 are the terminal logs boom logs again XML tags open the terminal with command
+00:21:30.960 J copy the whole thing boom paste it into clo And I'm going to close the XML
+00:21:37.600 tags locks. Investigate what is wrong. Ultraink
+00:21:43.280 and answer in short. So ultra thinking is a keyword that will use the maximum reasoning effort for cloth code and
+00:21:49.360 that's why it was this rainbow color. Okay. So that was fast. Anyways, next
+00:21:54.880 auto cache just cache page quick fix get refresh. So it caused a refresh after we
+00:22:01.440 created market. That's good. And uh Gemini renamed everything to David market. That's also good. Let's uh go
+00:22:07.120 back here and reload. And we have our market here. Okay, let's open it up. Will Bitcoin hit 200k 26. 50% chance.
+00:22:14.159 I'm going to trade $5 on buying. Yes. And it's change the odds, right? So,
+00:22:20.080 it's a automated market maker. Let me do $17 on no. Boom. Now, it's more of a chance. Now, I'm going to $99 on the
+00:22:26.080 yes. And we're skewing the odds. Now, if I drop $217 on no, you can see that the
+00:22:32.159 math is working. Homepage is kind of  So, I'm going to say the main
+00:22:33.000 No text
+00:22:37.600 landing page is kind of weak. We need to see the markets, the odds, and some
+00:22:45.039 visual graphs. Get to work and make this happen. Also, avoid these cringe vibe
+00:22:52.720 coding gradients. Instead, use a clean white, gray,
+00:22:59.840 black, metallic color palette. Again, do not change any logic or functionality
+00:23:07.280 of our app. And even though I'm typing with several typos, it doesn't matter. These are language models. They can
+00:23:14.720 easily understand that. And what I'm trying to stress is I'm using the best model for the work. I'm using Gemini 3
+00:23:21.280 for the front end design, which right now it's best at front end design. And I'm using cloud code with Opus 4.5 for
+00:23:27.280 their core logic which again it's best at that. Okay. So the MVP of our app
+00:23:33.200 works. So while Gemini upgrade their front end we're going to do what most content creators don't show you. How to
+00:23:39.200 actually deploy it how to actually host it. Because look it's almost 2026 like
+00:23:44.240 anybody can build an app in a matter of a few prompts. Right here we did it in five prompts, but if you have a simple
+00:23:50.159 idea, maybe it's a one prompt thing, a two prompt things. That is not an impressive thing anymore. It was a year
+00:23:55.600 ago. It certainly was two years ago. It's not anymore. So, I'm going to show you what all the other YouTubers don't
+00:24:01.679 show you. And I'm going to take it a step further and do the deployment. But first we need to set up a GitHub for
+00:24:07.919 this because in order to deploy a project anywhere you almost always need to have it on GitHub or you know
+00:24:15.360 alternatives to GitHub but GitHub is the most popular way to store code and um
+00:24:22.960 again you don't have to master it in the new society. I have a few modules on the essentials of GitHub for coding with AI
+00:24:29.520 but basically you just need a GitHub account. It takes a few minutes to create one. And then go to top right, click on repositories, click on new. I'm
+00:24:37.039 going to name it David market because that's what we're building here. I'm going to make it public so all of you
+00:24:42.960 can use it. And actually before we do that, we need to change we need to tell cloud one more important thing. create a
+00:24:50.880 comprehensive git ignore file in the root of our project to properly exclude
+00:24:58.640 all sensitive files because right now we don't have it. So right now if we initialize the
+00:25:04.799 git repository everything would be tracked by git. We don't want that. We want a git ignore so that node modules
+00:25:12.320 which is useless just a folder with a very large f folder with lots of megabytes. We don't want to upload that
+00:25:18.559 to GitHub or ENV files. Basically, whatever cloud code put into git ignore,
+00:25:24.320 right? Again, the models have gotten so good, you don't have to specify what should be in the git ignore. They have tens of millions of different git
+00:25:31.039 ignores in their training data. So, they know what should be in there. Now, obviously, if your project is very
+00:25:36.159 esoteric, you probably should extend it yourself. Okay. Read me, we don't need
+00:25:41.279 it. Get ignore, we don't need it. Also, GitHub offers it, right? So like if you can do like Python or Nex.js or
+00:25:47.840 whatever, if you don't trust CL code, just use one of the GitHub presets. They're really solid. Anyways, I'm going
+00:25:54.559 to create this repo. I'm going to uh switch back. And actually, we can look at our new front end. I forgot that
+00:26:00.240 Gemini 3 improved our front end. Boom. Much better. Look at this. Clean black
+00:26:05.279 and white. We have a We have a what's it called? A slider. Will Bitcoin hit?
+00:26:12.320 Okay. And yeah, we have the landing page. Let's create a new market. Will agent zero go public before 2030? Create
+00:26:21.200 market. Okay, so it's 50/50 as any new market should be. I'm going to do uh
+00:26:26.400 1337 for yes. That should skew the odds massively. Okay, it didn't. 20 for no,
+00:26:32.720 right? 1337 for yes. Okay, why is this not working? Okay,
+00:26:38.799 maybe four digits too much. Oh, it was more than the volume. Okay, so we're not handling that properly. That's a edge
+00:26:44.159 case. We're going to look into that in a bit. But now let's lock in on the GitHub setup, right? So I'm going to say tell
+00:26:50.640 me how step by step how I can connect our project to GitHub. Think harder
+00:26:58.799 answer in short. So think harder is not as powerful as ultra think, but it's one level one level lower. What we need to
+00:27:05.440 do is we need to in initialize a new git repository. So I'm going to open a terminal. I'm going to do get in it.
+00:27:11.760 Boom. This will initialize an empty G repository. You can see if you're using an ID and this is why you should be
+00:27:17.600 using cursor or VS code is if you go into the top right you have the source control and you can see which files are
+00:27:24.400 about to be staged and which files are not. And you can see that um all of this
+00:27:29.600 is ready to be committed ready to be staged. So again, I already ran the
+00:27:35.120 first, but if you don't know what you're doing, just ask AI, right? Don't get stuck. Don't run into this uh like don't
+00:27:42.640 take errors personally. That's the main thing. You have to be willing to solve problems. You need to become you need to think like an entrepreneur. Even if
+00:27:48.720 you're not an entrepreneur, you need to think like an entrepreneur and develop your problem solving skills. Any problem
+00:27:53.919 can be solved. And if you run into an error, don't take it personally. just describe how the error happened and use
+00:27:59.760 the cutting edge AI models like Opus 4.5, like Gemini 3 Pro to help you out. So even though I've set up many G
+00:28:06.640 repositories in the past and I'm familiar with GitHub, if I'm going fast, too fast through any of this, just
+00:28:13.840 pause, take a screenshot, put it into CL, put it into ChatGpt, Perplexity, Gemini, doesn't matter. And just ask
+00:28:20.240 them to explain it. Right? So here I asked Claude just as I was complete
+00:28:25.360 beginner to list out the commands and it's telling me what to do. So first we need to stage all files. Get add dot
+00:28:31.039 that stages everything. You can also do git add/ a by the way that's a pro tip.
+00:28:36.159 Then we need to do the initial commit. So get commit-m and this and then the commit message. I
+00:28:41.760 would highly recommend you actually learn the main five git commands, right?
+00:28:46.880 Git add, git commit, git push, maybe git log, git reflog. I mean there's a bunch,
+00:28:52.399 but yeah, if you learn the main five, seven, 10 g commands, I mean git,
+00:28:57.520 there's hundreds of commands in git, but like again, learn the main seven, eight commands. It's very good to know how to
+00:29:03.520 type them yourself without AI. But again, feel free to start with AI. All of us did. So I'm going to first commit.
+00:29:09.039 Boom. That's a commit message. Close the quotation mark. I'm going to do clear to make the terminal clear. Then we need to
+00:29:16.240 set what is the main branch also known as m master branch doesn't matter you can name this main you can name this master those are the two most popular
+00:29:22.799 names g branch but you only do this at at the start right once when you're setting up your project so get branch- m
+00:29:29.520 capital m main vag set now we need to connect the remote git repository
+00:29:34.880 luckily github makes this super simple they literally give you the URL so let's copy that then we do get remote at
+00:29:43.760 origin and we just paste it Hit enter. Super simple. Clear again. And then this
+00:29:49.200 is the main part. We push everything, right? So when you initialize git, it is local on your machine. But we need to
+00:29:54.960 push it to GitHub. That's how you get it stored. That's how you can uh deploy it on apps and stuff like that. So I'm
+00:30:00.799 going to do get push and again the you need to do this only once. The dash u
+00:30:06.080 this this is a you set upstream tracking. Don't worry, you don't have to understand all the technical details. in
+00:30:11.760 origin main and it is will push it to GitHub. If we refresh here, we should see our folders,
+00:30:19.679 our files have been successfully pushed to GitHub. Here is our readme file explaining everything. And yeah, we have
+00:30:27.600 successfully moved everything to GitHub. So now it's not just on my machine, it's uh stored here, which means if we
+00:30:34.000 No text
+00:30:34.159 connect GitHub anywhere, we can easily deploy it, which is exactly what we're going to do right now. We're going to take what we built and I'm going to show
+00:30:40.480 you the most affordable way to deploy this and to self-host it. So, you're not relying on Versell. You're not going to
+00:30:46.960 get a surprise $300,000 Versel bill. And trust me, there's plenty of examples where people got charged like $60,000
+00:30:53.679 overnight because uh Versell is serverless. Uh you're you don't have to rely on Superbase, on Netlifi, on
+00:31:01.440 Render, Railway, none of that. I'm going to show you how to self-host it, which is by the way the most affordable way.
+00:31:08.080 But most people are scared of it, which is why they don't do it. And they become overly reliant on, you know, cloud
+00:31:14.080 hosted solutions such as Versell. But hey, since you're watching this video, you have nothing to worry about. I'm going to show you everything step by
+00:31:19.600 step. And I'm going to show you how to use AI to help you out with the parts that might seem difficult. So, if you
+00:31:26.640 watch until the end, you will know how to take any app you build and how to actually deploy it to the internet. So, you can get paying customers, you can
+00:31:32.720 share with your friends, and that alone will put you in the top 1% of AI coders.
+00:31:38.960 Most people can build an MVP, but they don't know how to deploy it or how to host it. So, we're going to do that right now. Now, before I show you how to
+00:31:43.000 No text
+00:31:45.120 actually self-host your app, let me explain the benefits of self-hosting because not many people understand this. First off, you have cheap, predictable
+00:31:51.440 costs versus any surprise versus cell bills. you know, nobody wants to be charged 700k or whatever, even if it's
+00:31:58.080 like $3,000. I mean, this happened to one people on my team literally. He he was like surprised charged a couple
+00:32:03.519 hundred for a simple MVP side project through Versel, right? So, if you have
+00:32:10.159 your own self-hosted server, you're probably paying like couple bucks a month and that's a constant predictable
+00:32:16.080 cost that is much more affordable than using all these cloud hosted solutions. Also, with your own VPS, you can have
+00:32:23.279 functions running 24/7. Whereas, if you use built-in versile functions, there's only 60-cond limit on those. Another
+00:32:28.960 benefit is that you can have a direct database connection from your front end or from your back end, you don't have to worry about RL RLS policies, setting
+00:32:35.840 that up on superbase, stuff like that. You can install the database directly on your VPS and you can use only
+00:32:43.279 open-source frameworks, solutions, front ends, backends, databases, whatever.
+00:32:48.960 Everything you use can be open source if you have your own VPS. You can choose where all of the code comes comes from.
+00:32:54.720 That's not the case if you're using a third party hosting solutions, right? Often times they don't have most of
+00:33:01.440 their code open source. So you don't see any vulnerabilities or you just don't own everything, right? So there are
+00:33:07.760 several benefits, several more benefits of self-hosting. These are the main ones. Now let me show you how to
+00:33:12.000 No text
+00:33:13.279 actually self-host any app that you build through using Dock Play. So as I hinted earlier for the self-hosting part
+00:33:19.440 we're going to use dog play and it is by the way open source you can go to their GitHub and check it out. Um as they say
+00:33:25.360 it's a open source alternative to the cell netify and Heroku right so this allows you to selfhost end to end full
+00:33:32.000 stack your whole application and uh you feel free to read through it I'm going to link it below the video but also what
+00:33:38.000 it does is it give you a simple clear UI to manage your VPS. So without doc ploy
+00:33:44.080 we would have to be a little bit of devops expert right we would have to master Linux we would have to know the basic terminal commands to run and stuff
+00:33:50.640 like that but with dock ploy we get this nice UI to manage our services front end
+00:33:57.120 backend database whatever we need we get the logs I'll show you all of that but what do ploy does it it makes
+00:34:03.600 self-hosting much much more approachable and much easier than otherwise and that's why we're going to use dock ploy
+00:34:10.000 to host this app but first we need somewhere where to host it, right? We need our own server. We need a VPS, a
+00:34:11.000 No text
+00:34:15.679 virtual private server. And for that, we're going to use Hostinger. So, if you go to Hostinger, they offer many
+00:34:20.800 different VPS servers. Personally, I use the KVN2 one for everything I need. Uh I
+00:34:26.000 have actually multiple of these VPS. One for my AI agents. So, I you can use Hostinger with NAN as well, by the way,
+00:34:32.480 to host every NA10 automation that you build, which otherwise you would have to use NA10 cloud for that, which is a lot
+00:34:37.520 more expensive than Hostinger. But I also have a hostinger VPS for experimenting with deployments, right?
+00:34:42.960 Deploying apps to my own server and I have full root access to that server. So I can do anything I want with it. Plus
+00:34:49.679 it's a lot more affordable than alternatives like Versell, Netify, Heroku, Superbase, stuff like that.
+00:34:56.000 Trust me, I know that because for my startup, I'm paying hundreds of dollars per month for these third-party hosted
+00:35:02.480 solutions because when I started, I wasn't familiar with VPS and I certainly wasn't familiar with tools like Docky or
+00:35:10.000 Hostinger, which make managing your own VPS so much easier. So, let me show you how to set up the KVM2 plan. So, click
+00:35:16.640 on choose plan, and this will redirect you to the checkout here. Select the period. I recommend going 24 months
+00:35:22.320 because when you build your agents, you want them to be running forever. Plus, you get a really, really solid deal when
+00:35:27.839 you go with the 24-month plan. You even get a free domain for a year as a bonus. And since Hostinger was kind enough to
+00:35:33.760 sponsor this video, if you click on have coupon code and type in David, you will get another 10% off of your plan. Next,
+00:35:41.359 we need to select the location of our server. So, just select whatever is the closest to you. And then what remains is
+00:35:46.560 finishing the checkout. So, click on continue. Next, we need to create an account. And this takes 20 seconds. Super simple. Now, after you sign up,
+00:35:52.320 you get redirected to the billing page where you fill out your name and your billing details. And complete the
+00:35:58.160 purchase of your VPS. Make sure to check out Hostinger. Use the link below the video. Now, once you complete the checkout, go to the Hostinger panel on
+00:36:04.800 the left, click on VPS, and here you'll see your VPS servers. So, here's the new fresh VPS that requires setup. And I'm
+00:36:11.040 going to walk you through that right now. And you can see this is my other one, which is hosting all my NA10 agents
+00:36:16.160 and automations. So, I'm going to click on setup. Next, we need to select the server location. So, obviously, choose
+00:36:21.200 something that's close to you or close to your customers. So, if you're selling to the USA, choose Boston or Phoenix.
+00:36:28.240 Pretty self-explanatory. This is important though. We need to choose the operating system. So, we're
+00:36:33.440 going to do OS with panel and we're going to use dock ploy. There it is. Boom. Select. Next up, we need to set
+00:36:39.680 the root password for our VPS. And this is to login and access the VPS. So, just make sure to generate a secure one. And
+00:36:47.119 actually, there's only certain symbols allowed. I'm going to generate a few with my password manager to see. Okay,
+00:36:54.480 there it is. Something like this where it's a secure string of random characters and it matches these
+00:37:00.480 conditions because we're going to be using that to deploy stuff to our VPS.
+00:37:05.520 So, just do not share this with anybody. I'm going to change this password before uploading this video, obviously. Okay,
+00:37:11.440 click on next. All right, we can keep the malware scan enabled if you want. Again, can change that later on. And now
+00:37:16.960 it's setting up the VPS. And as it says, this process usually takes a few minutes because it's installing Abuntu, which is
+00:37:23.920 a Linux distro. And it again, hosting is making the VPS setup a lot simpler,
+00:37:29.040 right? If you had to take a server from scratch and install Linux, set up
+00:37:35.040 everything, then you're basically a DevOps expert, right? And that's a whole job. That's a whole profession. But
+00:37:40.320 since most of us are not DevOps professionals, we want to make it as simple as possible. That's why using
+00:37:46.560 things like Hostinger, like do ploy and by using AI agents like cloth code, we
+00:37:51.839 can remove a lot of that complexity while still maintaining full control over the VPS, right? We will still have
+00:37:57.520 root access. We can still do whatever we want with it. Install any type of text stack, use it in any way we want, but we
+00:38:04.960 just simplify it for ourselves, which that's the definition of high leverage. All right. So, it took less than six
+00:38:10.079 minutes. Was like two or three. But now the VPS is ready. So, let's click on manage VPS. This will get us to the
+00:38:16.960 dashboard for the server. We already have dog play right here. Nice. So, let's click on manage panel and this
+00:38:23.359 will open up docloy. As you can see, we have the UI. So, we don't have to mess with the shell directly. We don't have to, you know, open the raw terminal and
+00:38:31.040 know all the Linux commands. This is what dock ploy makes a lot lot easier. All right. Here. So, we need to set up
+00:38:36.800 the server. So these are credentials that will let us access the server. So I'm going to do David Andre David David
+00:38:45.119 Andre. You know my email. Then here you should probably do a different password than on the root server, right? So here
+00:38:52.320 we set a root password to our VPS, but this is to the docy login. So choose a
+00:38:57.680 different password. Boom. Just paste that in. Register. User registered
+00:39:03.119 successfully. And there we go. We're inside of docloy. Now again we can leverage the UI to deploy anything any
+00:39:10.480 service any you know front end any back end any database. Uh do has a lot and
+00:39:15.599 we're not going to go through everything in this video. I'm just going to show you the simplest way to deploy a Nex.js
+00:39:20.640 project which by the way that's what we built. We use Nex.js which is one of the most popular front ends uh frameworks
+00:39:28.560 for front end. And we're I'm going to show you how to deploy this on your VPS so it can be publicly accessible and you
+00:39:34.400 can build it into actual AI SAS and start getting customers. So let's go
+00:39:38.000 No text
+00:39:39.839 back into the deploy and we're going to click on create project. We're going to name it David market create. This
+00:39:46.480 creates a new project with that name. Next we're going to go to top right again and click on create service and application. So this is going to be the
+00:39:54.079 service for the whole app because remember we deployed everything. Oh, that's not our GitHub. This is our
+00:39:59.520 GitHub. We deployed everything um including the back end API routes. So
+00:40:04.880 just naming that front end would not be the best. I'm going to name it just app and create. Then I'm going to click on
+00:40:11.119 that. And here we have the provider aka the source of the code. And obviously we selected GitHub. And again feel free to
+00:40:16.880 use GitLab, Bitbucket or any other alternative to deploy your code but we're going to use GitHub. And as it
+00:40:22.320 says here to deploy using GitHub you need to configure your account first. Please go to settings to do so. Let's
+00:40:27.520 click on settings. Let's click on GitHub. This is not an organization GitHub. This is simply my own. So, click
+00:40:33.920 on create GitHub app. We need to authenticate with GitHub mobile. It's asking to create a GitHub app. So,
+00:40:41.040 here's the generated name. And we can change this later. So, let's just create. And there we go. We need an
+00:40:47.680 action required. Okay. So, what's the required action? Probably some approval.
+00:40:52.720 Okay. So, this is very confusing. This button is not clickable. You have to click on this button which uh will
+00:40:59.920 give permission to certain repositories. Right? So I'm going to do only select repositories and we're going to do the
+00:41:07.359 David market. There we go. Install and authorize. And now we can go back to our projects
+00:41:14.400 to David market to the app itself. And there we go. We can select the GitHub account. There's the app. Select the
+00:41:21.040 repository. David Market branch. So remember we have the main branch. That's actually the only branch we have. So
+00:41:27.119 that's simple. But you know, if you had a development branch, you would select that or staging branch, whatever you
+00:41:33.440 want, right? You can have a separate deployment for a staging environment, separate deployment for production. It's
+00:41:39.839 up to you. As the project grows, you're going to have more deployments. Then build path, we leave it as is. Trigger
+00:41:45.839 type, we can leave it on push. That's good. We can skip these and we can click save. Now, if you scroll down, you'll
+00:41:51.599 see the build type. Next packs, that's good. So that's what we want uh for next.js that's optimal. And then scroll
+00:41:56.960 back up and click on deploy. Confirm. Application deployed successfully. So
+00:42:05.200 what basically what's happening is that docloy is connecting to GitHub. It's going to take our GitHub repo. It's
+00:42:11.280 going to deploy it on the VPS that we're hosting on Hostinger and we should be
+00:42:16.560 able to access our app in less than a minute. We can actually click on view to see the logs in real time.
+00:42:23.680 and to see how our app is being built and deployed. So from the very beginning
+00:42:29.200 initializing deployment, it clones the repo from our GitHub into
+00:42:34.319 our VPS installing all the dependencies and we should be able to see this go green any
+00:42:41.040 moment now. All right, so no build errors for Nex.js. That's good. Let's
+00:42:46.160 reload this. Okay, it's still yellow. We need to wait until it's green. And there it is. So it has been deployed. Done.
+00:42:52.960 Next, we go to domains. And we can use a free domain from Docloy. So, domains,
+00:42:58.480 add domain, and then if you don't have your own custom domain, just click on this. We'll get a free one. And the
+00:43:04.160 rest, you can just leave it as is. Just click on create. And now we have our own domain. So, if you click that, we should
+00:43:09.280 see our app. And of course, we have an error. That's funny. So, I'm going to screenshot. Uh, boom. We're going to
+00:43:17.119 debug this with cloud code and paste this in. I just deployed my app on dock
+00:43:24.560 ploy. However, when I visit the URL, the app is crashing. See image. And also, we
+00:43:32.319 need to give it the logs. This is very important. Oh, maybe we haven't validated DNS. So, let's click on validate DNS. Checking DNS. DNS valid.
+00:43:39.599 Okay. So, let's reload our app. Reload this. Boom. Click on the URL again. And actually, that's my bad. This is not a
+00:43:46.720 random error. This is because our app is trying to connect to the database. Remember locally we ran docker we run
+00:43:54.160 postgress through docker but here we haven't set it up yet because our app is only the app itself right which is only
+00:44:00.079 the front and the back end we haven't created the service for the database yet which is what we're going to do right now so create service database we're
+00:44:07.040 going to use progress we're just going to name it DB which is a shortcut for database the rest we can
+00:44:13.839 leave as defaults click on create click on the database we need to copy the internal connection URL there it is copy
+00:44:20.720 Boom. Then we need to go back to the projects into our app into environment
+00:44:27.200 and we need to save it in the same format as we have right here. So
+00:44:32.240 actually we can probably use this to set it up. Boom. So database URL equals
+00:44:37.680 we're going to do the full thing, right? So copy that. Boom. Need to paste it in
+00:44:44.960 here. So let's go general and let's do deploy again. We need to redeploy
+00:44:50.880 because we changed the environment variables. And now our app should
+00:44:56.000 successfully connect to our database. And you can see how easy do makes it,
+00:45:02.000 right? Like the amount of things that Hostinger and Docky hides away all the
+00:45:07.440 abstractions, all the complexity. It's kind of amazing. Um hosting your own managing your own VPS has never been
+00:45:13.839 easier. Self-hosting has never been easier. Just like building your own custom software thanks to coding agents
+00:45:20.640 like Cloud Code, Cursor, Codex has never been easier. We literally live in the best time to build software. If you're
+00:45:27.599 not building your own software, what are you doing? Like again, you not everybody needs to build a startup. You
+00:45:33.760 could just build a script for yourself to save yourself time. Build some internal software, internal tools for
+00:45:38.880 your own company, for your team. Up to you. There's so many different things you can do, but it has never been
+00:45:44.240 easier. And yeah, there's tools like hostinger, like docloy, like cloud code
+00:45:49.920 that really make this easy. Okay, so we have u new deployment. So let's go back
+00:45:57.040 validate DNS and let's open our app. We still getting this error. We need to check the logs though. I don't know if
+00:46:03.200 it's uh still deployed deployments. Is this is this done? Done. So let's go
+00:46:10.160 back here and let's visit domain again. We're still getting this error. But what we should do is we should scroll to logs
+00:46:16.960 and we should see what's happening in the logs. We actually click on copy. So
+00:46:22.800 let's jump into plot code and just paste in the logs and let's see what it
+00:46:29.200 suggests. Right? So we need to give it context. We need to give it the screenshot of the white crash screen and
+00:46:34.720 then the full logs of our VPS to see what's happening and so that it can help
+00:46:40.400 us fix it up. and I told it to do ultra think. All right. So, so it gave us a
+00:46:45.599 long answer. I'm going to say make your answer simpler and shorter. It's another one of my all-time favorite prompts when
+00:46:52.720 the LLMs uh give you long answer. Start command. Okay. So, we need to change the start command. Database. Make sure the
+00:46:59.520 database service is running. It should be in the same project. Let's let's go
+00:47:05.040 back. Are they in the same project? Projects. Yes, they are. Start command. Oh, it's not deployed. Oops. That's my
+00:47:12.400 bad. Okay. Well, I'm going to deploy it. Yeah, that's that's a bigger mistake,
+00:47:17.440 you know, not deploying the database. Uh, but luckily that's fast. Deployment completed successfully. And close that.
+00:47:25.280 Boom. And maybe it works now. Still not. Let's check the logs for this. I'm going
+00:47:31.839 to paste it in. Boom. Logs. Logs. Above are the logs for the Postgress
+00:47:40.000 deployment. Yes, I forgot it. Started,
+00:47:45.280 but now it runs. What's the next step?
+00:47:50.880 Ultra thinking and surf in short. Boom. We're going to use cloud code to help us
+00:47:56.240 out. There's no shame in that. And actually, maybe it's good that it didn't go well on the first try. You know, like I could easily cut this out, but I'm
+00:48:01.920 going to show you how I use AI to debug this. Oh, we need to run these migrations. Okay, so this should be
+00:48:08.400 correct from your local machine. Prisma DB push. Uh, okay. So, we need to run
+00:48:16.079 this in the doc app terminal. So, projects, let's go into our app. We need
+00:48:22.000 to Where is the terminal access here? General.
+00:48:28.480 Oh, there open terminal. Yeah. So, we need to run this npx prisma db push. Enter.
+00:48:34.960 This will use Prisma to create the database tables. Again, Prisma is an RM.
+00:48:40.160 This allows us to work with the database through code. Uh we have an error. So
+00:48:47.599 again, screenshot Prisma is not installed. Maybe we need to run npm install first. Again, deploy
+00:48:54.559 this on. We might just need to do npm uh install. Stand build doesn't include a
+00:49:01.599 Prisma schema. run it from your local machine instead. Okay, so this is a bit confusing, but we deployed everything on
+00:49:09.760 GitHub and then cloned that into dock ploy. How come it doesn't have the
+00:49:17.040 Prisma? Okay, so this is supposedly the easiest solution. So I'm going to trust cloud code and do that. We need the VPS
+00:49:23.920 IP. So we get that here. Uh uh uh.
+00:49:29.040 Is this the IP you need? paste that in. We also need to expose the port 5432
+00:49:36.160 publicly. Make sure port is exposed on docloy database service. So we go dock ploy we
+00:49:41.760 go uh yes we need to close the terminal confirm we need to go to again projects
+00:49:48.000 and on our database let's see if the port internal port
+00:49:53.520 external port external credentials in order to make the database reachable for internet you must set a port being okay
+00:49:59.359 external port internet 5432 5432 save okay external port updated that's
+00:50:07.440 good so we should run this locally this command. So let's do that. Enter.
+00:50:16.319 Okay, that looks like success. So I'm going to do logs. Paste that in. Logs.
+00:50:22.400 Above are the terminal logs from my local terminal. Did it go well? Just a
+00:50:29.680 confirmation. Can see if this loads. Oh, it loaded. Yes, table successfully. Your app should
+00:50:31.000 No text
+00:50:36.240 work now. And it does work now. And it's deployed on a public URL. All of you can access this. So let's create a new
+00:50:42.400 market. Uh uh uh what about will Elon
+00:50:48.000 Musk become the first trillionaire? Okay. Create market. And let's start
+00:50:53.599 betting on this. Right. So I'm going to do $50. Yes. Chances are shifted.
+00:50:58.640 Somebody does $99. No. Again. Okay. We have error. So we get some errors. Obviously we can debug this. I'm not
+00:51:01.000 No text
+00:51:04.559 going to pretend we build a perfect app right away. But the fact that our app works and we have everything deployed on
+00:51:11.040 a VPS, it's pretty pretty insane. And again, I already showed you how to debug. I showed you the most essential
+00:51:17.680 skill. Uh you can paste in the screenshots, paste in the context into cloud code, and it can help solve
+00:51:23.440 anything just like we did right now. Now you know how to build and deploy any AI SAS yourself and how to self-host it,
+00:51:30.000 which is something that most people never do. It's the most affordable option, but most people are scared of it
+00:51:35.119 because they don't know about Docy and they don't know about Hostinger. So again, shout out to Hostinger for sponsoring this video. Go below. It's
+00:51:42.000 going to be the first link below the video. Get your VPM. The KVM2 plan is more than enough. You can deploy any
+00:51:47.680 ASAs on this and get it started and get your first few paying customers. And this is the most affordable way to build
+00:51:54.000 your own startup to build your own ASAs and to host it. And you have full access, full root access to RO server.
+00:51:59.839 So again, go in the video description, click the first link, and set up your hosting or VPS today. With that being
+00:52:06.640 said, thank you guys for watching and have a wonderful rest of the week. See you.

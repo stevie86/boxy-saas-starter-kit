@@ -1,7 +1,7 @@
 import prisma from '@/lib/db';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { deleteRoom } from '@/app/actions/rooms';
+import { deleteRoom } from '@/app/actions/rooms'; // Removed exportRooms action
 
 export const dynamic = 'force-dynamic';
 
@@ -69,6 +69,14 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
       </div>
 
       <h2 className="text-2xl font-bold mb-4">Rooms</h2>
+      <div className="mb-4 text-right flex gap-2 justify-end">
+        <Link href={`/api/export/rooms/${id}`} className="btn btn-outline btn-sm">
+          Export Rooms CSV
+        </Link>
+        <Link href={`/properties/${id}/rooms/import`} className="btn btn-primary btn-sm">
+          Import Rooms CSV
+        </Link>
+      </div>
       {property.rooms.length === 0 ? (
         <div className="text-center p-8 bg-gray-50 rounded-lg border border-dashed border-gray-300">
           <p className="text-gray-500 mb-2">No rooms added yet.</p>
