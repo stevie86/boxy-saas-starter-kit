@@ -1,69 +1,47 @@
-const typescriptEslint = require("@typescript-eslint/eslint-plugin");
-const i18Next = require("eslint-plugin-i18next");
-const globals = require("globals");
-const tsParser = require("@typescript-eslint/parser");
-const js = require("@eslint/js");
+const globals = require('globals');
+const tsParser = require('@typescript-eslint/parser');
+const typescriptEslint = require('@typescript-eslint/eslint-plugin');
+const reactHooks = require('eslint-plugin-react-hooks');
+const { FlatCompat } = require('@eslint/eslintrc'); // Correct import
 
-const {
-    FlatCompat,
-} = require("@eslint/eslintrc");
-
+// Create a FlatCompat instance
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: {
+    plugins: ['@typescript-eslint', 'react-hooks'],
+  },
 });
 
-module.exports = [{
-    ignores: [
-        ".next",
-        "**/node_modules",
-        "eslint.config.cjs"
-    ],
-}, ...compat.extends(
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "next/core-web-vitals",
-    "plugin:i18next/recommended",
-), {
-    plugins: {
-        "@typescript-eslint": typescriptEslint,
-        i18next: i18Next,
-    },
+module.exports = [
+  {
+    ignores: ['.next', '**/node_modules'],
+  },
+  // Convert the legacy next/core-web-vitals config to flat config format
+  ...compat.extends('next/core-web-vitals'),
 
+  // Base configuration for all files
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
-        globals: {
-            ...globals.node,
-        },
-
-        parser: tsParser,
-        ecmaVersion: 13,
-        sourceType: "module",
+      parser: tsParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+      'react-hooks': reactHooks,
     },
     rules: {
-        "@typescript-eslint/no-explicit-any": "off",
-    }
-}, {
-    files: ["**/*.js"],
-
-    rules: {
-        "@typescript-eslint/no-require-imports": "off",
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
+      // Any custom rules not covered by nextVitals
     },
-}, {
-    files: ["**/seed.ts"],
+  },
+];
 
-    rules: {
-        "@typescript-eslint/no-require-imports": "off",
-    },
-}, {
-    files: [
-        "components/defaultLanding/**/*.tsx",
-        "components/emailTemplates/**/*.tsx",
-        "pages/index.tsx",
-    ],
 
-    rules: {
-        "i18next/no-literal-string": "off",
-    },
-}];
